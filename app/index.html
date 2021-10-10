@@ -5,8 +5,127 @@ engine: ejs
 current: index
 ---
 
-<h1>
-  這是一段話
-</h1>
-
-<div class="box"></div>
+<!-- Feature product -->
+<div class="container mx-auto text-white my-20">
+    <div class="grid grid-cols-6 gap-10">
+        <div class="col-span-3">
+            <h2>Feature product</h2>
+            <span>產品特色</span>
+        </div>
+        <div v-for="(item, index) in feature_product" :key="index" :class="item.col" class="text-center">
+            <div></div>
+            <p>{{item.text}}</p>
+        </div>
+    </div>
+</div>
+<!-- specifications -->
+<div class="text-white">
+    <div class="grid grid-cols-2 h-250">
+        <div class="p-5">
+            <h2>specifications</h2>
+            <span>產品規格</span>
+        </div>
+        <div>
+            <h3>電源</h3>
+            <ul>
+                <li>110V, 13A, 1300W (STD)</li>
+                <li>220V, 10A, 1300W (Optional)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="grid grid-cols-4">
+        <div></div>
+        <div>
+            <h3>桌面開孔尺寸</h3>
+            <ul>
+                <li>35 mm</li>
+            </ul>
+        </div>
+        <div class="col-span-2">
+            <div class="h-250">
+                <h3>給水/排水</h3>
+                <ul>
+                    <li>均使用2分管</li>
+                    <li>建議使用過濾水</li>
+                </ul>
+            </div>
+            <div class="h-250"></div>
+        </div>
+    </div>
+</div>
+<!-- Coffee evolution -->
+<div class="container mx-auto text-white">
+    <h2>Coffee evolution</h2>
+    <span>咖啡浪潮</span>
+    <div class="grid grid-cols-2">
+        <div>
+            <h3>精品手沖咖啡</h3>
+            <ul>
+                <li>確保咖啡品質</li>
+                <li>建構優質服務</li>
+                <li>獨特品質與差異</li>
+                <li>完整的咖啡體驗</li>
+            </ul>
+            <div>串聯味蕾</div>
+        </div>
+        <div>
+            <h3>第三波咖啡浪潮</h3>
+            <ul>
+                <li>提升咖啡品質</li>
+                <li>強調永續發展</li>
+                <li>較淺的烘焙程度</li>
+                <li>創新的沖煮方法</li>
+            </ul>
+            <div>顧客服務，感覺特別體驗</div>
+        </div>
+    </div>
+</div>
+<!-- Design concept -->
+<div class="container mx-auto text-white">
+    <h2>Design concept</h2>
+    <span>設計理念</span>
+    <div class="grid grid-cols-2">
+        <div class="grid grid-cols-3 gap-10">
+            <div v-for="(item, index) in design_concept" :key="index" class="text-center">
+                <div></div>
+                <p>{{item.text}}</p>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</div>
+<!-- Benefit -->
+<div class="text-white">
+    <div>
+        <h2>Benefit</h2>
+        <span>設備效益</span>
+    </div>
+    <div class="grid grid-cols-2">
+        <div>
+            <h3>對店家的效益</h3>
+            <div class="grid grid-cols-4">
+                <div v-for="(item, index) in benefit_shop" :key="index" class="text-center">
+                    <div></div>
+                    <p>{{item.text}}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>對消費者的效益</h3>
+            <div class="grid grid-cols-4">
+                <div v-for="(item, index) in benefit_user" :key="index" class="text-center">
+                    <div></div>
+                    <p>{{item.text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cooperative -->
+<div class="partner">
+    <h2>Cooperative</h2>
+    <span>合作廠商</span>
+    <div>
+        <img v-for="(img, index) in partner" :key="index" :src="img" alt="">
+    </div>
+</div>
