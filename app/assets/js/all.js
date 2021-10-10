@@ -150,7 +150,7 @@ const app = Vue.createApp({
   },
   methods: {
     partner_reSet() {
-      const link = '/assets/images/partner/';
+      const link = './assets/images/partner/';
       const new_partner = []
 
       this.partner.forEach(p => {
