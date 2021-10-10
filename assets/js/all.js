@@ -115,7 +115,7 @@ var app = Vue.createApp({
   },
   methods: {
     partner_reSet: function partner_reSet() {
-      var link = '/assets/images/partner/';
+      var link = './assets/images/partner/';
       var new_partner = [];
       this.partner.forEach(function (p) {
         new_partner.push(link + p + '.png');
