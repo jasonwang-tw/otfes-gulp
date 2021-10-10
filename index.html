@@ -1,10 +1,54 @@
----
-title: 首頁
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
+<!DOCTYPE html>
+<html lang="zh-TW">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    首頁
+  </title>
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css'
+    integrity='sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=='
+    crossorigin='anonymous' />
+</head>
+
+<body>
+  <div class="app">
+    <div class="py-16 text-white main_products">
+      <header class="container relative mx-auto lg:flex items-center justify-center">
+        <div>
+          <a :href="items.link" v-for="(items, index) in navBefore" :key="index" class="mx-8">{{items.text}}</a>
+        </div>
+        <div class="mx-8">
+          <img src="assets/images/logo.png" alt="">
+        </div>
+        <div>
+          <a :href="items.link" v-for="(items, index) in navAfter" :key="index" class="mx-8">{{items.text}}</a>
+        </div>
+        <div class="absolute right-0">Langusge</div>
+      </header>
+      <!-- products -->
+      <div class="container mx-auto grid grid-cols-2 gap-10">
+        <div class="">
+          <h2>OTFES</h2>
+          <ul>
+            <li>MODEL 3</li>
+            <li>MODEL 4</li>
+          </ul>
+          <h1 class="leading-none">Model 4<br>
+            <span class="text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
+          </h1>
+          <div>產品詳細</div>
+        </div>
+        <div>
+          <img src="assets/images/slamp.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    
 <!-- Feature product -->
 <div class="container mx-auto text-white my-20">
     <div class="grid grid-cols-6 gap-10">
@@ -129,3 +173,23 @@ current: index
         <img v-for="(img, index) in partner" :key="index" :src="img" alt="">
     </div>
 </div>
+
+      <footer class="container mx-auto lg:flex flex-wrap items-center justify-center text-white py-20">
+        <div>
+          <a :href="items.link" v-for="(items, index) in navBefore" :key="index" class="mx-8">{{items.text}}</a>
+        </div>
+        <div class="mx-8">
+          <img src="assets/images/logo.png" alt="">
+        </div>
+        <div>
+          <a :href="items.link" v-for="(items, index) in navAfter" :key="index" class="mx-8">{{items.text}}</a>
+        </div>
+        <div class="w-full text-center mt-10">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
+      </footer>
+  </div>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>
