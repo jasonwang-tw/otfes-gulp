@@ -1,5 +1,5 @@
 ---
-title: 首頁
+title: OTFES
 layout: ./app/layout.ejs
 engine: ejs
 current: index
@@ -61,20 +61,14 @@ current: index
         <div>
             <h3>精品手沖咖啡</h3>
             <ul>
-                <li>確保咖啡品質</li>
-                <li>建構優質服務</li>
-                <li>獨特品質與差異</li>
-                <li>完整的咖啡體驗</li>
+                <li v-for="(item, index) in coffee_before" :key="index">{{item}}</li>
             </ul>
             <div>串聯味蕾</div>
         </div>
         <div>
             <h3>第三波咖啡浪潮</h3>
             <ul>
-                <li>提升咖啡品質</li>
-                <li>強調永續發展</li>
-                <li>較淺的烘焙程度</li>
-                <li>創新的沖煮方法</li>
+                <li v-for="(item, index) in coffee_after" :key="index">{{item}}</li>
             </ul>
             <div>顧客服務，感覺特別體驗</div>
         </div>
@@ -123,9 +117,25 @@ current: index
 </div>
 <!-- Cooperative -->
 <div class="partner">
-    <h2>Cooperative</h2>
-    <span>合作廠商</span>
-    <div>
-        <img v-for="(img, index) in partner" :key="index" :src="img" alt="">
+    <div class="container mx-auto pt-20 pb-36">
+        <div class="text-center mb-10">
+            <h2>Cooperative</h2>
+            <span>合作廠商</span>
+        </div>
+        <div class="relative">
+            <div class="partner_logo px-20">
+                <div v-for="(img, index) in partner" :key="index">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+            <div class="flex w-full justify-between absolute top-1/3">
+                <div class="to_left">
+                    <i class="text-3xl cursor-pointer bi bi-chevron-left"></i>
+                </div>
+                <div class="to_right">
+                    <i class="text-3xl cursor-pointer bi bi-chevron-right"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

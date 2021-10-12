@@ -1,6 +1,17 @@
 const app = Vue.createApp({
   data() {
     return {
+      poducts: [
+        {
+          type: 'MODEL 3',
+          img: ['slamp', 'slamp'],
+        },
+        {
+          type: 'MODEL 4',
+          img: ['slamp', 'slamp', 'slamp', 'slamp'],
+        }
+      ],
+      current_model: 0,
       navBefore: [
         {
           link: '#',
@@ -71,6 +82,8 @@ const app = Vue.createApp({
           text: '滿足連續大量出杯需求，支援快速展店體系'
         },
       ],
+      coffee_before: ['確保咖啡品質', '建構優質服務', '獨特品質與差異', '完整的咖啡體驗'],
+      coffee_after: ['提升咖啡品質', '強調永續發展', '較淺的烘焙程度', '創新的沖煮方法'],
       design_concept: [
         {
           icon: '',
@@ -145,10 +158,31 @@ const app = Vue.createApp({
           text: '穩定品質咖啡'
         }
       ],
-      partner: ['Group', 'Rectangle', 'Rectangle-1', 'Rectangle-2', 'Rectangle-3', 'Rectangle-4']
+      partner: ['Group', 'Rectangle', 'Rectangle-1', 'Rectangle-2', 'Rectangle-3', 'Rectangle-4', 'Rectangle-5', 'Rectangle-6', 'Rectangle-7']
     }
   },
   methods: {
+    products_carousel() {
+      const link = './assets/images/';
+
+      const new_pc_M3 = []
+      const new_pc_M4 = []
+
+      this.poducts[0].img.forEach(m3 => {
+        new_pc_M3.push(
+          link + m3 + '.png'
+        )
+      });
+
+      this.poducts[1].img.forEach(m4 => {
+        new_pc_M4.push(
+          link + m4 + '.png'
+        )
+      });
+
+      this.poducts[0].img = new_pc_M3
+      this.poducts[1].img = new_pc_M4
+    },
     partner_reSet() {
       const link = './assets/images/partner/';
       const new_partner = []
@@ -162,11 +196,44 @@ const app = Vue.createApp({
       this.partner = new_partner
     }
   },
+  watch: {
+
+  },
   mounted() {
-    this.partner_reSet()
+
+
+    this.products_carousel();
+    this.partner_reSet();
+
+
+    // products_carousel
+    for (let index = 0; index < this.poducts.length; index++) {
+      $('.products_img' + index).slick({
+        dots: true,
+        infinite: false,
+        prevArrow: '.to_left' + index,
+        nextArrow: '.to_right' + index,
+      });
+    }
+
+
+    // partner_carousel
+    $('.partner_logo').slick({
+      dots: true,
+      infinite: false,
+      slidesToShow: 8,
+      slidesToScroll: 1,
+      prevArrow: '.to_left',
+      nextArrow: '.to_right',
+    });
+
+
+    // fancybox 產品詳細
+    $('.fancybox').fancybox();
   },
 });
 
-
 // 掛載
 app.mount('.app');
+
+
