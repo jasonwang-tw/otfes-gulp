@@ -6,12 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-    首頁
+    OTFES
   </title>
-  <link rel="stylesheet" href="./assets/style/all.css">
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css'
     integrity='sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=='
     crossorigin='anonymous' />
+
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+  <link rel="stylesheet" href="./assets/style/all.css">
 </head>
 
 <body>
@@ -30,20 +37,46 @@
         <div class="absolute right-0">Langusge</div>
       </header>
       <!-- products -->
-      <div class="container mx-auto grid grid-cols-2 gap-10">
-        <div class="">
+      <div class="container mx-auto grid grid-cols-5 gap-10 pt-10">
+        <div class="pt-10 col-span-2 pl-20">
           <h2>OTFES</h2>
-          <ul>
-            <li>MODEL 3</li>
-            <li>MODEL 4</li>
+          <ul class="flex products_select mb-5">
+            <li class="cursor-pointer h4 py-8 px-5 font-bold" v-for="(item, index) in poducts"
+              @click="current_model = index" :class="{active : current_model === index}" :key="index">{{item.type}}</li>
           </ul>
-          <h1 class="leading-none">Model 4<br>
-            <span class="text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
-          </h1>
-          <div>產品詳細</div>
+          <template v-if="current_model == 0">
+            <h1 class="leading-none text-8xl">Model 3<br>
+              <span class="mt-5 text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
+            </h1>
+          </template>
+          <template v-else-if="current_model == 1">
+            <h1 class="leading-none text-8xl">Model 4<br>
+              <span class="mt-5 text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
+            </h1>
+          </template>
+          <div class="flex items-center mt-10">
+            <a class="fancybox btn borderBtn mr-5" href="./assets/images/detail.jpg">產品詳細</a>
+            <a href="#" class="btn mainBtn">立即購買</a>
+          </div>
         </div>
-        <div>
-          <img src="./assets/images/slamp.png" alt="">
+        <div class="col-span-3">
+          <!-- products_carousel -->
+          <div class="relative" v-for="(p, index) in poducts" :key="index"
+            :class="{'h-0' : current_model !== index , 'overflow-hidden' : current_model !== index}">
+            <div :class="'products_img' + index">
+              <div v-for="(pi, i) in p.img" :key="i">
+                <img :src="pi" alt="" class="block mx-auto">
+              </div>
+            </div>
+            <div class="flex w-full justify-between absolute top-1/2">
+              <div :class="'to_left' + index">
+                <i class="text-3xl cursor-pointer bi bi-chevron-left"></i>
+              </div>
+              <div :class="'to_right' + index">
+                <i class="text-3xl cursor-pointer bi bi-chevron-right"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -105,20 +138,14 @@
         <div>
             <h3>精品手沖咖啡</h3>
             <ul>
-                <li>確保咖啡品質</li>
-                <li>建構優質服務</li>
-                <li>獨特品質與差異</li>
-                <li>完整的咖啡體驗</li>
+                <li v-for="(item, index) in coffee_before" :key="index">{{item}}</li>
             </ul>
             <div>串聯味蕾</div>
         </div>
         <div>
             <h3>第三波咖啡浪潮</h3>
             <ul>
-                <li>提升咖啡品質</li>
-                <li>強調永續發展</li>
-                <li>較淺的烘焙程度</li>
-                <li>創新的沖煮方法</li>
+                <li v-for="(item, index) in coffee_after" :key="index">{{item}}</li>
             </ul>
             <div>顧客服務，感覺特別體驗</div>
         </div>
@@ -167,10 +194,26 @@
 </div>
 <!-- Cooperative -->
 <div class="partner">
-    <h2>Cooperative</h2>
-    <span>合作廠商</span>
-    <div>
-        <img v-for="(img, index) in partner" :key="index" :src="img" alt="">
+    <div class="container mx-auto pt-20 pb-36">
+        <div class="text-center mb-10">
+            <h2>Cooperative</h2>
+            <span>合作廠商</span>
+        </div>
+        <div class="relative">
+            <div class="partner_logo px-20">
+                <div v-for="(img, index) in partner" :key="index">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+            <div class="flex w-full justify-between absolute top-1/3">
+                <div class="to_left">
+                    <i class="text-3xl cursor-pointer bi bi-chevron-left"></i>
+                </div>
+                <div class="to_right">
+                    <i class="text-3xl cursor-pointer bi bi-chevron-right"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -187,7 +230,12 @@
         <div class="w-full text-center mt-10">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
       </footer>
   </div>
+
+
   <script src="./assets/js/vendors.js"></script>
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="./assets/js/all.js"></script>
 </body>
