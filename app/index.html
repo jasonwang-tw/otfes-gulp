@@ -6,117 +6,76 @@ current: index
 ---
 
 <!-- Feature product -->
-<div class="container mx-auto text-white my-20">
-    <div class="grid grid-cols-6 gap-10">
-        <div class="col-span-3">
-            <h2>Feature product</h2>
-            <span>產品特色</span>
-        </div>
-        <div v-for="(item, index) in feature_product" :key="index" :class="item.col" class="text-center">
-            <div></div>
-            <p>{{item.text}}</p>
+<div class="container mx-auto text-white my-20 lg:px-40">
+    <div class="text-center">
+        <h2>產品特色</h2>
+        <span class="text-xl">Feature</span>
+    </div>
+    <div class="grid grid-cols-3 gap-5 justify-center my-16">
+        <div v-for="(item, index) in feature_product" :key="index"
+            class="border border-gray-500 p-5 rounded-xl text-center">
+            <p class="text-xl">{{item.text}}</p>
         </div>
     </div>
 </div>
 <!-- specifications -->
 <div class="text-white">
-    <div class="grid grid-cols-2 h-250">
-        <div class="p-5">
-            <h2>specifications</h2>
-            <span>產品規格</span>
+    <div class="text-center">
+        <h2>產品優勢</h2>
+        <span class="text-xl">Benefits to coffee shops</span>
+    </div>
+    <div class="grid grid-cols-2">
+        <div v-for="(item, index) in benefits" :key="index" class="text-xl">{{item.text}}</div>
+    </div>
+</div>
+<!-- About -->
+<div class="about py-16">
+    <div class="container mx-auto lg:px-52">
+        <div class="text-center mb-8">
+            <h2>品牌故事</h2>
+            <span class="text-xl">About</span>
         </div>
         <div>
-            <h3>電源</h3>
-            <ul>
-                <li>110V, 13A, 1300W (STD)</li>
-                <li>220V, 10A, 1300W (Optional)</li>
-            </ul>
+            <p class="text-center text-xl">OTFES
+                智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
+            </p>
         </div>
     </div>
-    <div class="grid grid-cols-4">
-        <div></div>
-        <div>
-            <h3>桌面開孔尺寸</h3>
-            <ul>
-                <li>35 mm</li>
-            </ul>
+</div>
+<!-- Support -->
+<div class="text-white py-16">
+    <div class="container mx-auto lg:px-52">
+        <div class="text-center mb-8">
+            <h2>支援中心</h2>
+            <span class="text-xl">Support</span>
         </div>
-        <div class="col-span-2">
-            <div class="h-250">
-                <h3>給水/排水</h3>
+        <div class="grid grid-cols-2 gap-10">
+            <div class="bg-black bg-opacity-50 rounded-2xl p-10">
+                <h3 class="font-bold">Model 4</h3>
+                <hr class="my-3 opacity-20">
                 <ul>
-                    <li>均使用2分管</li>
-                    <li>建議使用過濾水</li>
+                    <li>
+                        <a href="./assets/pdf/Model 4_細部規格.pdf" download>細部規格</a>
+                    </li>
+                    <li>
+                        <a href="./assets/pdf/Model 4_使用說明.pdf" download>使用說明</a>
+                    </li>
                 </ul>
             </div>
-            <div class="h-250"></div>
-        </div>
-    </div>
-</div>
-<!-- Coffee evolution -->
-<div class="container mx-auto text-white">
-    <h2>Coffee evolution</h2>
-    <span>咖啡浪潮</span>
-    <div class="grid grid-cols-2">
-        <div>
-            <h3>精品手沖咖啡</h3>
-            <ul>
-                <li v-for="(item, index) in coffee_before" :key="index">{{item}}</li>
-            </ul>
-            <div>串聯味蕾</div>
-        </div>
-        <div>
-            <h3>第三波咖啡浪潮</h3>
-            <ul>
-                <li v-for="(item, index) in coffee_after" :key="index">{{item}}</li>
-            </ul>
-            <div>顧客服務，感覺特別體驗</div>
-        </div>
-    </div>
-</div>
-<!-- Design concept -->
-<div class="container mx-auto text-white">
-    <h2>Design concept</h2>
-    <span>設計理念</span>
-    <div class="grid grid-cols-2">
-        <div class="grid grid-cols-3 gap-10">
-            <div v-for="(item, index) in design_concept" :key="index" class="text-center">
-                <div></div>
-                <p>{{item.text}}</p>
-            </div>
-        </div>
-        <div></div>
-    </div>
-</div>
-<!-- Benefit -->
-<div class="text-white">
-    <div>
-        <h2>Benefit</h2>
-        <span>設備效益</span>
-    </div>
-    <div class="grid grid-cols-2">
-        <div>
-            <h3>對店家的效益</h3>
-            <div class="grid grid-cols-4">
-                <div v-for="(item, index) in benefit_shop" :key="index" class="text-center">
-                    <div></div>
-                    <p>{{item.text}}</p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <h3>對消費者的效益</h3>
-            <div class="grid grid-cols-4">
-                <div v-for="(item, index) in benefit_user" :key="index" class="text-center">
-                    <div></div>
-                    <p>{{item.text}}</p>
-                </div>
+            <div class="bg-black bg-opacity-50 rounded-2xl p-10">
+                <h3 class="font-bold">Model 4</h3>
+                <hr class="my-3 opacity-20">
+                <ul>
+                    <li>
+                        <a href="./assets/pdf/Model 4_SPECIFICATIONS.pdf" download>SPECIFICATIONS</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 <!-- Cooperative -->
-<div class="partner">
+<div class="partner hidden">
     <div class="container mx-auto pt-20 pb-36">
         <div class="text-center mb-10">
             <h2>Cooperative</h2>

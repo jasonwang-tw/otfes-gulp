@@ -23,7 +23,8 @@ body {
   background-image: url(../images/main_bg.png);
   @include bg_Style();
 }
-.partner {
+.partner,
+.about {
   background-image: url(../images/partner_bg.jpg);
   @include bg_Style();
 }

@@ -24,17 +24,16 @@
 <body>
   <div class="app">
     <div class="py-16 text-white main_products">
-      <header class="container relative mx-auto lg:flex items-center justify-center">
-        <div>
-          <a :href="items.link" v-for="(items, index) in navBefore" :key="index" class="mx-8">{{items.text}}</a>
+      <header class="container mx-auto flex items-center justify-between">
+        <div class="lg:flex items-center">
+          <div class="mx-8">
+            <img src="./assets/images/logo.png" alt="">
+          </div>
+          <div>
+            <a :href="items.link" v-for="(items, index) in nav" :key="index" class="mx-8">{{items.text}}</a>
+          </div>
         </div>
-        <div class="mx-8">
-          <img src="./assets/images/logo.png" alt="">
-        </div>
-        <div>
-          <a :href="items.link" v-for="(items, index) in navAfter" :key="index" class="mx-8">{{items.text}}</a>
-        </div>
-        <div class="absolute right-0">Langusge</div>
+        <div class="">Langusge</div>
       </header>
       <!-- products -->
       <div class="container mx-auto grid grid-cols-5 gap-10 pt-10">
@@ -46,17 +45,17 @@
           </ul>
           <template v-if="current_model == 0">
             <h1 class="leading-none text-8xl">Model 3<br>
-              <span class="mt-5 text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
+              <span class="mt-5 text-2xl font-normal block">智慧手沖咖啡機含櫥下機</span>
             </h1>
           </template>
           <template v-else-if="current_model == 1">
             <h1 class="leading-none text-8xl">Model 4<br>
-              <span class="mt-5 text-base font-normal block">智慧型頂級手沖機含櫥下控制機</span>
+              <span class="mt-5 text-2xl font-normal block">智慧手沖咖啡機含櫥下機</span>
             </h1>
           </template>
           <div class="flex items-center mt-10">
-            <a class="fancybox btn borderBtn mr-5" href="./assets/images/detail.jpg">產品詳細</a>
-            <a href="#" class="btn mainBtn">立即購買</a>
+            <!-- <a class="fancybox btn borderBtn mr-5" href="./assets/images/detail.jpg">產品詳細</a> -->
+            <!-- <a href="#" class="btn mainBtn">立即購買</a> -->
           </div>
         </div>
         <div class="col-span-3">
@@ -83,17 +82,46 @@
 
     <%- contents %>
 
-      <footer class="container mx-auto lg:flex flex-wrap items-center justify-center text-white py-20">
-        <div>
-          <a :href="items.link" v-for="(items, index) in navBefore" :key="index" class="mx-8">{{items.text}}</a>
+      <footer class="container mx-auto text-white py-20">
+        <div class="grid grid-cols-2 my-16">
+          <div class="flex items-center">
+            <div>
+              <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
+            </div>
+            <div class="mx-16">
+              <h3>聯絡我們</h3>
+              <span class="text-xl">Contact</span>
+            </div>
+            <div>
+              東陞國際科技股份有限公司
+              <ul>
+                <li>桃園市桃園區永順街8號</li>
+                <li>電話: (03)301-6607</li>
+                <li>傳真: (03)301-6627</li>
+                <li>contactus@otfes.com</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pl-16 border-l border-opacity-20">
+            <h3 class="mb-5">Follow US</h3>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/otfes/" class="flex items-center" target="_blank">
+                  <i class="bi bi-facebook text-2xl mr-5"></i><span>Facebook</span>
+                </a>
+              </li>
+              <li class="flex items-center">
+                <a href="https://www.youtube.com/channel/UCF7SE7fhK7T4mIZivf4fmFg" class="flex items-center"
+                  target="_blank">
+                  <i class="bi bi-youtube text-2xl mr-5"></i><span>Youtube</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="mx-8">
-          <img src="./assets/images/logo.png" alt="">
-        </div>
-        <div>
-          <a :href="items.link" v-for="(items, index) in navAfter" :key="index" class="mx-8">{{items.text}}</a>
-        </div>
-        <div class="w-full text-center mt-10">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
+
+
+        <div class="w-full text-center">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
       </footer>
   </div>
 
