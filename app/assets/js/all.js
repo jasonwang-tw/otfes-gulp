@@ -70,7 +70,7 @@ const app = Vue.createApp({
           text: '咖啡品質穩定',
         },
       ],
-     
+
       design_concept: [
         {
           icon: '',
@@ -97,7 +97,6 @@ const app = Vue.createApp({
           text: '降低快速展店門檻',
         }
       ],
-      partner: ['Group', 'Rectangle', 'Rectangle-1', 'Rectangle-2', 'Rectangle-3', 'Rectangle-4', 'Rectangle-5', 'Rectangle-6', 'Rectangle-7']
     }
   },
   methods: {
@@ -121,29 +120,12 @@ const app = Vue.createApp({
 
       this.poducts[0].img = new_pc_M3
       this.poducts[1].img = new_pc_M4
-    },
-    partner_reSet() {
-      const link = './assets/images/partner/';
-      const new_partner = []
-
-      this.partner.forEach(p => {
-        new_partner.push(
-          link + p + '.png'
-        )
-      });
-
-      this.partner = new_partner
     }
   },
-  watch: {
-
-  },
+  watch: {},
   mounted() {
 
-
     this.products_carousel();
-    this.partner_reSet();
-
 
     // products_carousel
     for (let index = 0; index < this.poducts.length; index++) {

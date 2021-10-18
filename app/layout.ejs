@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <div class="app">
+  <div class="app h-full">
     <div class="py-16 text-white main_products">
       <header class="container mx-auto flex items-center justify-between">
         <div class="lg:flex items-center">
@@ -82,30 +82,26 @@
 
     <%- contents %>
 
-      <footer class="container mx-auto text-white py-20">
-        <div class="grid grid-cols-2 my-16">
-          <div class="flex items-center">
-            <div>
+      <footer class="container mx-auto text-white py-16">
+        <div class="grid grid-cols-2 mb-32">
+          <div class="flex items-center justify-end">
+            <div class="mr-16">
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
             </div>
-            <div class="mx-16">
-              <h3>聯絡我們</h3>
-              <span class="text-xl">Contact</span>
-            </div>
-            <div>
-              東陞國際科技股份有限公司
+            <div class="mr-16">
+              <h3 class="mb-5">東陞國際科技股份有限公司</h3>
               <ul>
                 <li>桃園市桃園區永順街8號</li>
                 <li>電話: (03)301-6607</li>
                 <li>傳真: (03)301-6627</li>
-                <li>contactus@otfes.com</li>
+                <li><a href="mailto:contactus@otfes.com" class="text-sup underline">contactus@otfes.com</a></li>
               </ul>
             </div>
           </div>
           <div class="pl-16 border-l border-opacity-20">
             <h3 class="mb-5">Follow US</h3>
-            <ul>
-              <li>
+            <ul class="flex">
+              <li class="flex items-center mr-16">
                 <a href="https://www.facebook.com/otfes/" class="flex items-center" target="_blank">
                   <i class="bi bi-facebook text-2xl mr-5"></i><span>Facebook</span>
                 </a>
