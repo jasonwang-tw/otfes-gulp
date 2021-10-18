@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <div class="app">
+  <div class="app h-full">
     <div class="py-16 text-white main_products">
       <header class="container mx-auto flex items-center justify-between">
         <div class="lg:flex items-center">
@@ -82,7 +82,7 @@
 
     
 <!-- Feature product -->
-<div class="container mx-auto text-white my-20 lg:px-40">
+<div class="container mx-auto text-white my-48 lg:px-40">
     <div class="text-center">
         <h2>產品特色</h2>
         <span class="text-xl">Feature</span>
@@ -95,110 +95,82 @@
     </div>
 </div>
 <!-- specifications -->
-<div class="text-white">
-    <div class="text-center">
-        <h2>產品優勢</h2>
-        <span class="text-xl">Benefits to coffee shops</span>
-    </div>
-    <div class="grid grid-cols-2">
-        <div v-for="(item, index) in benefits" :key="index" class="text-xl">{{item.text}}</div>
-    </div>
-</div>
-<!-- About -->
-<div class="about py-16">
-    <div class="container mx-auto lg:px-52">
-        <div class="text-center mb-8">
-            <h2>品牌故事</h2>
-            <span class="text-xl">About</span>
-        </div>
-        <div>
-            <p class="text-center text-xl">OTFES
-                智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
-            </p>
-        </div>
-    </div>
-</div>
-<!-- Support -->
-<div class="text-white py-16">
-    <div class="container mx-auto lg:px-52">
-        <div class="text-center mb-8">
-            <h2>支援中心</h2>
-            <span class="text-xl">Support</span>
-        </div>
-        <div class="grid grid-cols-2 gap-10">
-            <div class="bg-black bg-opacity-50 rounded-2xl p-10">
-                <h3 class="font-bold">Model 4</h3>
-                <hr class="my-3 opacity-20">
-                <ul>
-                    <li>
-                        <a href="./assets/pdf/Model 4_細部規格.pdf" download>細部規格</a>
-                    </li>
-                    <li>
-                        <a href="./assets/pdf/Model 4_使用說明.pdf" download>使用說明</a>
-                    </li>
-                </ul>
+<div class="text-white h-full">
+    <div class="grid grid-cols-5 items-center h-full">
+        <div class="flex items-center justify-center h-full relative mask"
+            style="background-image: url(https://picsum.photos/380/1024?random=5);">
+            <div class="relative z-10 text-center">
+                <h2>產品優勢</h2>
+                <span class="text-xl">Benefits to coffee shops</span>
             </div>
-            <div class="bg-black bg-opacity-50 rounded-2xl p-10">
-                <h3 class="font-bold">Model 4</h3>
-                <hr class="my-3 opacity-20">
-                <ul>
-                    <li>
-                        <a href="./assets/pdf/Model 4_SPECIFICATIONS.pdf" download>SPECIFICATIONS</a>
-                    </li>
-                </ul>
+        </div>
+        <div v-for="(item, index) in benefits" :key="index"
+            class="flex items-center justify-center text-2xl h-full relative mask"
+            :style="'background-image: url(https://picsum.photos/380/1024?random=' + index + ');'">
+            <div class="relative z-10">{{item.text}}</div>
+        </div>
+    </div>
+</div>
+<div class="bg-white-img">
+    <!-- About -->
+    <div class="about py-16">
+        <div class="container mx-auto lg:px-52">
+            <div class="text-center mb-8">
+                <h2>品牌故事</h2>
+                <span class="text-xl">About</span>
+            </div>
+            <div>
+                <p class="text-center text-xl">OTFES
+                    智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
+                </p>
             </div>
         </div>
     </div>
-</div>
-<!-- Cooperative -->
-<div class="partner hidden">
-    <div class="container mx-auto pt-20 pb-36">
-        <div class="text-center mb-10">
-            <h2>Cooperative</h2>
-            <span>合作廠商</span>
-        </div>
-        <div class="relative">
-            <div class="partner_logo px-20">
-                <div v-for="(img, index) in partner" :key="index">
-                    <img :src="img" alt="">
+    <!-- Support -->
+    <hr class="container mx-auto">
+    <div class="support py-16">
+        <div class="container mx-auto lg:px-52">
+            <div class="flex items-center justify-center mx-auto">
+                <div class="w-96 text-center">
+                    <h2>支援中心</h2>
+                    <span class="text-xl">Support</span>
                 </div>
-            </div>
-            <div class="flex w-full justify-between absolute top-1/3">
-                <div class="to_left">
-                    <i class="text-3xl cursor-pointer bi bi-chevron-left"></i>
-                </div>
-                <div class="to_right">
-                    <i class="text-3xl cursor-pointer bi bi-chevron-right"></i>
+                <div class="w-96 text-center bg-black bg-opacity-10 rounded-2xl p-10">
+                    <h3 class="font-bold mb-3">Model 4</h3>
+                    <ul>
+                        <li>
+                            <a href="./assets/pdf/Model 4_細部規格.pdf" download class="btn mainBtn inline-block">細部規格</a>
+                        </li>
+                        <li>
+                            <a href="./assets/pdf/Model 4_使用說明.pdf" download class="btn mainBtn inline-block">使用說明</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-      <footer class="container mx-auto text-white py-20">
-        <div class="grid grid-cols-2 my-16">
-          <div class="flex items-center">
-            <div>
+      <footer class="container mx-auto text-white py-16">
+        <div class="grid grid-cols-2 mb-32">
+          <div class="flex items-center justify-end">
+            <div class="mr-16">
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
             </div>
-            <div class="mx-16">
-              <h3>聯絡我們</h3>
-              <span class="text-xl">Contact</span>
-            </div>
-            <div>
-              東陞國際科技股份有限公司
+            <div class="mr-16">
+              <h3 class="mb-5">東陞國際科技股份有限公司</h3>
               <ul>
                 <li>桃園市桃園區永順街8號</li>
                 <li>電話: (03)301-6607</li>
                 <li>傳真: (03)301-6627</li>
-                <li>contactus@otfes.com</li>
+                <li><a href="mailto:contactus@otfes.com" class="text-sup underline">contactus@otfes.com</a></li>
               </ul>
             </div>
           </div>
           <div class="pl-16 border-l border-opacity-20">
             <h3 class="mb-5">Follow US</h3>
-            <ul>
-              <li>
+            <ul class="flex">
+              <li class="flex items-center mr-16">
                 <a href="https://www.facebook.com/otfes/" class="flex items-center" target="_blank">
                   <i class="bi bi-facebook text-2xl mr-5"></i><span>Facebook</span>
                 </a>

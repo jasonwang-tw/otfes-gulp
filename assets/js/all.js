@@ -70,8 +70,7 @@ var app = Vue.createApp({
       }, {
         icon: '',
         text: '降低快速展店門檻'
-      }],
-      partner: ['Group', 'Rectangle', 'Rectangle-1', 'Rectangle-2', 'Rectangle-3', 'Rectangle-4', 'Rectangle-5', 'Rectangle-6', 'Rectangle-7']
+      }]
     };
   },
   methods: {
@@ -87,20 +86,11 @@ var app = Vue.createApp({
       });
       this.poducts[0].img = new_pc_M3;
       this.poducts[1].img = new_pc_M4;
-    },
-    partner_reSet: function partner_reSet() {
-      var link = './assets/images/partner/';
-      var new_partner = [];
-      this.partner.forEach(function (p) {
-        new_partner.push(link + p + '.png');
-      });
-      this.partner = new_partner;
     }
   },
   watch: {},
   mounted: function mounted() {
-    this.products_carousel();
-    this.partner_reSet(); // products_carousel
+    this.products_carousel(); // products_carousel
 
     for (var index = 0; index < this.poducts.length; index++) {
       $('.products_img' + index).slick({
