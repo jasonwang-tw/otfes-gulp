@@ -8,7 +8,7 @@
   <title>
     OTFES
   </title>
-
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css'
     integrity='sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=='
     crossorigin='anonymous' />
@@ -23,7 +23,7 @@
 
 <body>
   <div class="app h-full">
-    <div class="py-16 text-white main_products">
+    <div class="pt-16 pb-24 text-white main_products">
       <header class="container mx-auto flex items-center justify-between">
         <div class="lg:flex items-center">
           <div class="mx-8">
@@ -33,11 +33,23 @@
             <a :href="items.link" v-for="(items, index) in nav" :key="index" class="mx-8">{{items.text}}</a>
           </div>
         </div>
-        <div class="">Langusge</div>
+        <div class="relative cursor-pointer langBar" @click="langBar = !langBar">
+          <span>Language</span><span class="mx-3">/</span><span class="text-linght-sup">繁體中文</span>
+          <ul class="absolute z-20 w-full bg-white text-main rounded-xl overflow-hidden mt-3"
+            :class="{hidden : langBar}">
+            <li>
+              <a href="#" class="text-center py-3 block">繁體中文</a>
+            </li>
+            <hr>
+            <li>
+              <a href="#" class="text-center py-3 block">English</a>
+            </li>
+          </ul>
+        </div>
       </header>
       <!-- products -->
-      <div class="container mx-auto grid grid-cols-5 gap-10 pt-10">
-        <div class="pt-10 col-span-2 pl-20">
+      <div class="container mx-auto grid grid-cols-5">
+        <div class="pt-10 col-span-2 mt-16 pl-20">
           <h2>OTFES</h2>
           <ul class="flex products_select mb-5">
             <li class="cursor-pointer h4 py-8 px-5 font-bold" v-for="(item, index) in poducts"
@@ -81,61 +93,76 @@
     </div>
 
     
-<!-- Feature product -->
-<div class="container mx-auto text-white my-48 lg:px-40">
-    <div class="text-center">
-        <h2>產品特色</h2>
-        <span class="text-xl">Feature</span>
-    </div>
-    <div class="grid grid-cols-3 gap-5 justify-center my-16">
-        <div v-for="(item, index) in feature_product" :key="index"
-            class="border border-gray-500 p-5 rounded-xl text-center">
-            <p class="text-xl">{{item.text}}</p>
-        </div>
-    </div>
-</div>
-<!-- specifications -->
-<div class="text-white h-full">
-    <div class="grid grid-cols-5 items-center h-full">
-        <div class="flex items-center justify-center h-full relative mask"
-            style="background-image: url(https://picsum.photos/380/1024?random=5);">
-            <div class="relative z-10 text-center">
-                <h2>產品優勢</h2>
-                <span class="text-xl">Benefits to coffee shops</span>
-            </div>
-        </div>
-        <div v-for="(item, index) in benefits" :key="index"
-            class="flex items-center justify-center text-2xl h-full relative mask"
-            :style="'background-image: url(https://picsum.photos/380/1024?random=' + index + ');'">
-            <div class="relative z-10">{{item.text}}</div>
-        </div>
-    </div>
-</div>
 <div class="bg-white-img">
-    <!-- About -->
-    <div class="about py-16">
-        <div class="container mx-auto lg:px-52">
-            <div class="text-center mb-8">
-                <h2>品牌故事</h2>
-                <span class="text-xl">About</span>
+    <!-- Feature product -->
+    <div class="feature bg-white-img">
+        <div class="container mx-auto py-60 lg:px-40">
+            <h2 id="feature" class="text-center">產品特色</h2>
+            <div class="psd_point grid grid-cols-5 gap-10 justify-center mt-16">
+                <div v-for="(item, index) in feature_product" :key="index"
+                    class="bg-white p-5 rounded-xl text-center shadow-2xl">
+                    <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i>
+                    <p class="text-lg text-dark-sup">{{item.text}}</p>
+                </div>
             </div>
-            <div>
-                <p class="text-center text-xl">OTFES
+        </div>
+    </div>
+    <!-- benefits -->
+    <div class="benefits pt-32">
+        <div class="container mx-auto">
+            <h2 id="benefits" class="text-center">產品優勢</h2>
+            <div class="grid grid-cols-4 gap-10 mt-16">
+                <div class="flex items-center">
+                    <div class="psd_benefits w-full">
+                        <template v-for="(b, index) in benefits">
+                            <div v-for="(bb, index) in b.brfore"
+                                class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
+                                <div class="">
+                                    <i class="text-5xl mb-5 block text-sup" :class="bb.icon"></i>
+                                    <p class="text-lg text-dark-sup">{{bb.text}}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <img src="assets/images/slamp_2.png" alt="">
+                </div>
+                <div class="flex items-center">
+                    <div class="psd_benefits w-full">
+                        <template v-for="(b, index) in benefits">
+                            <div v-for="(ba, index) in b.after"
+                                class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
+                                <div class="text-lg text-dark-sup">
+                                    <i class="text-5xl mb-5 block text-sup" :class="ba.icon"></i>
+                                    <p class="text-lg text-dark-sup">{{ba.text}}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="h-1_2">
+    <div class="grid grid-cols-2 h-full">
+        <!-- About -->
+        <div class="about relative flex items-center justify-center">
+            <div class="mask"></div>
+            <div class="w-3/5 relative z-10">
+                <h2 id="store" class="text-white text-center mb-8">品牌故事</h2>
+                <p class="text-white text-center">OTFES
                     智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
                 </p>
             </div>
         </div>
-    </div>
-    <!-- Support -->
-    <hr class="container mx-auto">
-    <div class="support py-16">
-        <div class="container mx-auto lg:px-52">
-            <div class="flex items-center justify-center mx-auto">
-                <div class="w-96 text-center">
-                    <h2>支援中心</h2>
-                    <span class="text-xl">Support</span>
-                </div>
-                <div class="w-96 text-center bg-black bg-opacity-10 rounded-2xl p-10">
+        <!-- Support -->
+        <div class="support relative flex items-center justify-center">
+            <div class="mask"></div>
+            <div class="w-3/5 relative z-10">
+                <h2 id="support" class="text-white text-center mb-8">支援中心</h2>
+                <div class="w-96 mx-auto text-center bg-white shadow-2xl rounded-xl p-10">
                     <h3 class="font-bold mb-3">Model 4</h3>
                     <ul>
                         <li>
@@ -151,8 +178,8 @@
     </div>
 </div>
 
-      <footer class="container mx-auto text-white py-16">
-        <div class="grid grid-cols-2 mb-32">
+      <footer id="contact" class="text-white py-16">
+        <div class="container mx-auto grid grid-cols-2 mb-32">
           <div class="flex items-center justify-end">
             <div class="mr-16">
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
