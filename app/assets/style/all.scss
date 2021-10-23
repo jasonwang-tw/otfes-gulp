@@ -1,63 +1,79 @@
-$main: #30363a;
-$sup: #c26b42;
+$text: ".text";
+$color: (
+  // main: #30363a,
+  main: #080f17,
+  sup: #9b7c5b,
+  linght-sup: #d6ae84,
+  dark-sup: #331f14
+);
 
-@mixin bg_Style {
-  background-size: cover;
+@mixin bg_Style($size: cover) {
+  background-size: $size;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Saira:wght@300;400;700;900&family=Ubuntu:wght@300;500;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Saira:wght@300;400;700;900&family=Ubuntu:wght@300;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;700&family=Noto+Sans+TC:wght@300;500;700&display=swap");
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 html,
 body {
   font-size: 16px;
-  background-image: url(../images/bg.jpg);
-  background-attachment: fixed;
   // font-family: "Roboto", sans-serif;
-  font-family: "Saira", sans-serif;
+  font-family: "Hind Madurai", "Noto Sans TC", sans-serif;
   font-weight: 300;
   height: 100%;
   @include bg_Style();
 }
 .main_products {
-  background-image: url(../images/main_bg.png);
+  background-image: url(../images/bg.jpg);
+  @include bg_Style(100% 100%);
+}
+.about {
+  background-image: url(../images/about.jpg);
+  @include bg_Style();
+}
+.support {
+  background-image: url(../images/support.jpg);
   @include bg_Style();
 }
 .bg-white-img {
-  background-image: url(../images/partner_bg.jpg);
+  background-image: url(../images/white_bg_2.jpg);
   background-attachment: fixed;
   @include bg_Style();
 }
+
 .h-250 {
   height: 250px;
 }
 .h-1_2 {
   height: 75%;
 }
-.text-sup {
-  color: $sup;
+#{$text}-main {
+  color: map-get($color, main);
+}
+#{$text}-sup {
+  color: map-get($color, sup);
+}
+#{$text}-linght-sup {
+  color: map-get($color, linght-sup);
+}
+#{$text}-dark-sup {
+  color: map-get($color, dark-sup);
 }
 .mask {
-  overflow: hidden;
-  &:hover:before {
-    left: -100%;
-    transition-duration: 0.2s;
-  }
-  &:before {
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    transition-duration: 0.2s;
-    background-color: #05111b80;
-  }
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition-duration: 0.2s;
+  background-color: #00000095;
 }
 
 h1,
@@ -87,7 +103,7 @@ h5,
 
 .products_select {
   li.active {
-    color: $sup;
+    color: map-get($color, sup);
     position: relative;
     &:after {
       bottom: 0;
@@ -106,15 +122,31 @@ h5,
   color: white;
   border-radius: 15px;
   overflow: hidden;
-  background-color: $sup;
+  background-color: map-get($color, sup);
 }
 .borderBtn {
-  color: $sup;
+  color: map-get($color, sup);
   border-radius: 15px;
-  border: 1px solid $sup;
+  border: 1px solid map-get($color, sup);
+}
+
+.psd_point {
+  div:nth-child(even) {
+    transform: translateY(80px);
+  }
+}
+.psd_benefits{
+  div:nth-child(even) {
+    transform: translateX(80px);
+  }
+}
+
+footer {
+  background-color: map-get($color, main);
 }
 
 // slick-carousel
+
 .slick-dots {
   position: absolute;
   bottom: -45px;
@@ -123,6 +155,12 @@ h5,
   padding: 0;
   list-style: none;
   text-align: center;
+  border-radius: 99px;
+  // background-color: rgba(255, 255, 255, 0.1);
+  max-width: 200px;
+  padding: 2px;
+  left: 50%;
+  transform: translateX(-50%);
   li {
     position: relative;
     display: inline-block;
@@ -157,7 +195,7 @@ h5,
 }
 .slick-dots li button:before {
   // font-family: "slick";
-  font-size: 20px;
+  font-size: 10px;
   line-height: 20px;
   position: absolute;
   top: 0;
@@ -166,9 +204,9 @@ h5,
   height: 20px;
   content: "●";
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.7;
   color: white;
 }
 .slick-dots li.slick-active button:before {
-  color: $sup;
+  color: map-get($color, main);
 }

@@ -1,76 +1,88 @@
 const app = Vue.createApp({
   data() {
     return {
+      langBar: true,
       poducts: [
         {
           type: 'MODEL 3',
-          img: ['slamp', 'slamp'],
+          img: ['Modol3_1', 'Modol3_2', 'Modol3_3'],
         },
         {
           type: 'MODEL 4',
-          img: ['slamp', 'slamp', 'slamp', 'slamp'],
+          img: ['Model4_1', 'Model4_2', 'Model4_3'],
         }
       ],
       current_model: 0,
       nav: [
         {
-          link: '#',
+          link: '#feature',
           text: '產品特色'
         },
         {
-          link: '#',
+          link: '#benefits',
           text: '產品優勢'
         },
         {
-          link: '#',
+          link: '#store',
           text: '品牌故事'
         },
         {
-          link: '#',
+          link: '#support',
           text: '支援中心'
         },
         {
-          link: '#',
+          link: '#contact',
           text: '聯絡我們'
         },
       ],
       feature_product: [
         {
-          icon: '',
+          icon: 'bi bi-droplet',
           text: '專利螺旋注水設計'
         },
         {
-          icon: '',
+          icon: 'bi bi-cup',
           text: '咖啡品質穩定一致'
         },
         {
-          icon: '',
+          icon: 'bi bi-moisture',
           text: '雙鍋爐提供穩定水溫，可連續沖煮'
         },
         {
-          icon: '',
+          icon: 'bi bi-clipboard-data',
           text: '自由設定沖煮參數'
         },
         {
-          icon: '',
+          icon: 'bi bi-hand-index-thumb',
           text: '一鍵沖煮不費力'
         },
       ],
       benefits: [
         {
-          text: '兼顧專注手沖和細微客戶服務',
+          brfore: [
+            {
+              icon: 'bi bi-person-check',
+              text: '兼顧專注手沖和細微客戶服務',
+            },
+            {
+              icon: 'bi bi-currency-dollar',
+              text: '減少人事訓練成本',
+            },
+          ],
         },
         {
-          text: '減少人事訓練成本',
-        },
-        {
-          text: '快速展店',
-        },
-        {
-          text: '咖啡品質穩定',
-        },
+          after: [
+            {
+              icon: 'bi bi-shop',
+              text: '快速展店',
+            },
+            {
+              icon: 'bi bi-check2-circle',
+              text: '咖啡品質穩定',
+            },
+          ]
+        }
       ],
-
       design_concept: [
         {
           icon: '',
@@ -108,13 +120,13 @@ const app = Vue.createApp({
 
       this.poducts[0].img.forEach(m3 => {
         new_pc_M3.push(
-          link + m3 + '.png'
+          link + 'm3/' + m3 + '.png'
         )
       });
 
       this.poducts[1].img.forEach(m4 => {
         new_pc_M4.push(
-          link + m4 + '.png'
+          link + 'm4/' + m4 + '.png'
         )
       });
 
