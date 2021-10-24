@@ -17,16 +17,10 @@ body {
   background-position: center;
   background-repeat: no-repeat; }
 
-.about {
-  background-image: url(../images/about.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-.support {
-  background-image: url(../images/support.jpg);
-  background-size: cover;
-  background-position: center;
+.about_support {
+  background-image: url(../images/coffee_dots.png);
+  background-size: auto;
+  background-position: bottom;
   background-repeat: no-repeat; }
 
 .bg-white-img {
@@ -54,6 +48,25 @@ body {
 .text-dark-sup {
   color: #331f14; }
 
+a {
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s; }
+  a:hover {
+    opacity: 0.7;
+    -webkit-transition-duration: 0.2s;
+         -o-transition-duration: 0.2s;
+            transition-duration: 0.2s; }
+
+.title {
+  position: relative; }
+  .title:after {
+    position: absolute;
+    content: url(../images/line.png);
+    display: block;
+    bottom: -30px;
+    left: -10px; }
+
 .mask {
   display: block;
   width: 100%;
@@ -75,7 +88,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase; }
 
@@ -104,28 +117,31 @@ h5,
     content: url(../images/line.png); }
 
 .btn {
-  padding: 10px 25px; }
+  padding: 10px 35px;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s; }
+  .btn:hover {
+    -webkit-transition-duration: 0.2s;
+         -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    opacity: 0.6; }
 
 .mainBtn {
   color: white;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: #9b7c5b; }
 
 .borderBtn {
-  color: #9b7c5b;
+  color: #d6ae84;
   border-radius: 15px;
-  border: 1px solid #9b7c5b; }
+  border: 1px solid #d6ae84; }
 
 .psd_point div:nth-child(even) {
   -webkit-transform: translateY(80px);
       -ms-transform: translateY(80px);
           transform: translateY(80px); }
-
-.psd_benefits div:nth-child(even) {
-  -webkit-transform: translateX(80px);
-      -ms-transform: translateX(80px);
-          transform: translateX(80px); }
 
 footer {
   background-color: #080f17; }

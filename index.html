@@ -49,7 +49,7 @@
       </header>
       <!-- products -->
       <div class="container mx-auto grid grid-cols-5">
-        <div class="pt-10 col-span-2 mt-16 pl-20">
+        <div class="pt-10 col-span-2 mt-10 pl-20">
           <h2>OTFES</h2>
           <ul class="flex products_select mb-5">
             <li class="cursor-pointer h4 py-8 px-5 font-bold" v-for="(item, index) in poducts"
@@ -67,7 +67,7 @@
           </template>
           <div class="flex items-center mt-10">
             <!-- <a class="fancybox btn borderBtn mr-5" href="./assets/images/detail.jpg">產品詳細</a> -->
-            <!-- <a href="#" class="btn mainBtn">立即購買</a> -->
+            <a href="mailto:contactus@otfes.com" class="btn borderBtn">查詢最新價格方案</a>
           </div>
         </div>
         <div class="col-span-3">
@@ -97,20 +97,25 @@
     <!-- Feature product -->
     <div class="feature bg-white-img">
         <div class="container mx-auto py-60 lg:px-40">
-            <h2 id="feature" class="text-center">產品特色</h2>
-            <div class="psd_point grid grid-cols-5 gap-10 justify-center mt-16">
+            <div id="feature" class="text-center">
+                <h2 class="inline-block title">產品特色</h2>
+            </div>
+            <div class="psd_point grid grid-cols-5 gap-5 justify-center mt-16">
                 <div v-for="(item, index) in feature_product" :key="index"
                     class="bg-white p-5 rounded-xl text-center shadow-2xl">
                     <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i>
-                    <p class="text-lg text-dark-sup">{{item.text}}</p>
+                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
+                    <p>{{item.text}}</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- benefits -->
-    <div class="benefits pt-32">
+    <div class="benefits pt-24">
         <div class="container mx-auto">
-            <h2 id="benefits" class="text-center">產品優勢</h2>
+            <div id="benefits" class="text-center">
+                <h2 class="inline-block title">產品優勢</h2>
+            </div>
             <div class="grid grid-cols-4 gap-10 mt-16">
                 <div class="flex items-center">
                     <div class="psd_benefits w-full">
@@ -119,7 +124,8 @@
                                 class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
                                 <div class="">
                                     <i class="text-5xl mb-5 block text-sup" :class="bb.icon"></i>
-                                    <p class="text-lg text-dark-sup">{{bb.text}}</p>
+                                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{bb.title}}</h6>
+                                    <p>{{bb.text}}</p>
                                 </div>
                             </div>
                         </template>
@@ -135,7 +141,8 @@
                                 class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
                                 <div class="text-lg text-dark-sup">
                                     <i class="text-5xl mb-5 block text-sup" :class="ba.icon"></i>
-                                    <p class="text-lg text-dark-sup">{{ba.text}}</p>
+                                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{ba.title}}</h6>
+                                    <p>{{ba.text}}</p>
                                 </div>
                             </div>
                         </template>
@@ -145,27 +152,29 @@
         </div>
     </div>
 </div>
-<div class="h-1_2">
-    <div class="grid grid-cols-2 h-full">
+<div class="about_support">
+    <div class="container mx-auto grid grid-cols-3 py-60">
         <!-- About -->
-        <div class="about relative flex items-center justify-center">
-            <div class="mask"></div>
-            <div class="w-3/5 relative z-10">
-                <h2 id="store" class="text-white text-center mb-8">品牌故事</h2>
-                <p class="text-white text-center">OTFES
+        <div class="about">
+            <img src="assets/images/about.jpg" alt="">
+        </div>
+        <div class="col-span-2 flex items-center justify-center">
+            <div class="px-16">
+                <h2 id="store" class="mb-10 title">品牌故事</h2>
+                <p class="r">OTFES
                     智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
                 </p>
             </div>
         </div>
+        <hr class="col-span-3 my-16">
         <!-- Support -->
-        <div class="support relative flex items-center justify-center">
-            <div class="mask"></div>
-            <div class="w-3/5 relative z-10">
-                <h2 id="support" class="text-white text-center mb-8">支援中心</h2>
-                <div class="w-96 mx-auto text-center bg-white shadow-2xl rounded-xl p-10">
+        <div class="col-span-2 flex items-center">
+            <div class="px-16">
+                <h2 id="support" class="mb-10 title">支援中心</h2>
+                <div class="p-10 shadow-2xl rounded-xl">
                     <h3 class="font-bold mb-3">Model 4</h3>
-                    <ul>
-                        <li>
+                    <ul class="flex items-center justify-center">
+                        <li class="mr-5">
                             <a href="./assets/pdf/Model 4_細部規格.pdf" download class="btn mainBtn inline-block">細部規格</a>
                         </li>
                         <li>
@@ -174,6 +183,9 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="">
+            <img src="assets/images/support.jpg" alt="">
         </div>
     </div>
 </div>
@@ -185,7 +197,7 @@
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
             </div>
             <div class="mr-16">
-              <h3 class="mb-5">東陞國際科技股份有限公司</h3>
+              <h3 class="mb-5 h4">東陞國際科技股份有限公司</h3>
               <ul>
                 <li>桃園市桃園區永順街8號</li>
                 <li>電話: (03)301-6607</li>
@@ -195,7 +207,7 @@
             </div>
           </div>
           <div class="pl-16 border-l border-opacity-20">
-            <h3 class="mb-5">Follow US</h3>
+            <h3 class="mb-5 h4">Follow US</h3>
             <ul class="flex">
               <li class="flex items-center mr-16">
                 <a href="https://www.facebook.com/otfes/" class="flex items-center" target="_blank">
