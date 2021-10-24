@@ -38,23 +38,28 @@ const app = Vue.createApp({
       feature_product: [
         {
           icon: 'bi bi-droplet',
-          text: '專利螺旋注水設計'
+          title: '專利螺旋注水設計',
+          text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
         },
         {
           icon: 'bi bi-cup',
-          text: '咖啡品質穩定一致'
+          title: '咖啡品質穩定一致',
+          text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
         },
         {
           icon: 'bi bi-moisture',
-          text: '雙鍋爐提供穩定水溫，可連續沖煮'
+          title: '雙鍋爐提供穩定水溫，可連續沖煮',
+          text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
         },
         {
           icon: 'bi bi-clipboard-data',
-          text: '自由設定沖煮參數'
+          title: '自由設定沖煮參數',
+          text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
         },
         {
           icon: 'bi bi-hand-index-thumb',
-          text: '一鍵沖煮不費力'
+          title: '一鍵沖煮不費力',
+          text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
         },
       ],
       benefits: [
@@ -62,11 +67,13 @@ const app = Vue.createApp({
           brfore: [
             {
               icon: 'bi bi-person-check',
-              text: '兼顧專注手沖和細微客戶服務',
+              title: '兼顧專注手沖和細微客戶服務',
+              text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
             },
             {
               icon: 'bi bi-currency-dollar',
-              text: '減少人事訓練成本',
+              title: '減少人事訓練成本',
+              text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
             },
           ],
         },
@@ -74,11 +81,13 @@ const app = Vue.createApp({
           after: [
             {
               icon: 'bi bi-shop',
-              text: '快速展店',
+              title: '快速展店',
+              text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
             },
             {
               icon: 'bi bi-check2-circle',
-              text: '咖啡品質穩定',
+              title: '咖啡品質穩定',
+              text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
             },
           ]
         }

@@ -7,9 +7,9 @@ $color: (
   dark-sup: #331f14
 );
 
-@mixin bg_Style($size: cover) {
+@mixin bg_Style($size: cover, $position: center) {
   background-size: $size;
-  background-position: center;
+  background-position: $position;
   background-repeat: no-repeat;
 }
 
@@ -32,14 +32,11 @@ body {
   background-image: url(../images/bg.jpg);
   @include bg_Style(100% 100%);
 }
-.about {
-  background-image: url(../images/about.jpg);
-  @include bg_Style();
+.about_support {
+  background-image: url(../images/coffee_dots.png);
+  @include bg_Style(auto, bottom);
 }
-.support {
-  background-image: url(../images/support.jpg);
-  @include bg_Style();
-}
+
 .bg-white-img {
   background-image: url(../images/white_bg_2.jpg);
   background-attachment: fixed;
@@ -64,6 +61,24 @@ body {
 #{$text}-dark-sup {
   color: map-get($color, dark-sup);
 }
+a {
+  transition-duration: 0.2s;
+  &:hover {
+    opacity: 0.7;
+    transition-duration: 0.2s;
+  }
+}
+
+.title {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: url(../images/line.png);
+    display: block;
+    bottom: -30px;
+    left: -10px;
+  }
+}
 .mask {
   display: block;
   width: 100%;
@@ -84,7 +99,7 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -116,18 +131,23 @@ h5,
 }
 
 .btn {
-  padding: 10px 25px;
+  padding: 10px 35px;
+  transition-duration: 0.2s;
+  &:hover {
+    transition-duration: 0.2s;
+    opacity: 0.6;
+  }
 }
 .mainBtn {
   color: white;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: map-get($color, sup);
 }
 .borderBtn {
-  color: map-get($color, sup);
+  color: map-get($color, linght-sup);
   border-radius: 15px;
-  border: 1px solid map-get($color, sup);
+  border: 1px solid map-get($color, linght-sup);
 }
 
 .psd_point {
@@ -135,11 +155,11 @@ h5,
     transform: translateY(80px);
   }
 }
-.psd_benefits{
-  div:nth-child(even) {
-    transform: translateX(80px);
-  }
-}
+// .psd_benefits{
+//   div:nth-child(even) {
+//     transform: translateX(80px);
+//   }
+// }
 
 footer {
   background-color: map-get($color, main);
