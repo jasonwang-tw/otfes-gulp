@@ -24,7 +24,7 @@
 <body>
   <div class="app h-full">
     <div class="pt-16 pb-24 text-white main_products">
-      <header class="container mx-auto flex items-center justify-between">
+      <header class="container mx-auto items-center justify-between hidden md:flex">
         <div class="lg:flex items-center">
           <div class="mx-8">
             <img src="./assets/images/logo.png" alt="">
@@ -48,8 +48,8 @@
         </div>
       </header>
       <!-- products -->
-      <div class="container mx-auto grid grid-cols-5">
-        <div class="pt-10 col-span-2 mt-10 pl-20">
+      <div class="container mx-auto grid md:grid-cols-5">
+        <div class="pt-10 col-span-2 mt-10 md:pl-20">
           <h2>OTFES</h2>
           <ul class="flex products_select mb-5">
             <li class="cursor-pointer h4 py-8 px-5 font-bold" v-for="(item, index) in poducts"
@@ -70,7 +70,7 @@
             <a href="mailto:contactus@otfes.com" class="btn borderBtn">查詢最新價格方案</a>
           </div>
         </div>
-        <div class="col-span-3">
+        <div class="col-span-3 hidden md:block">
           <!-- products_carousel -->
           <div class="relative" v-for="(p, index) in poducts" :key="index"
             :class="{'h-0' : current_model !== index , 'overflow-hidden' : current_model !== index}">
@@ -95,7 +95,7 @@
     <%- contents %>
 
       <footer id="contact" class="text-white py-16">
-        <div class="container mx-auto grid grid-cols-2 mb-32">
+        <div class="container mx-auto md:grid grid-cols-2 mb-32">
           <div class="flex items-center justify-end">
             <div class="mr-16">
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">

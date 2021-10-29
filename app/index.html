@@ -12,23 +12,29 @@ current: index
             <div id="feature" class="text-center">
                 <h2 class="inline-block title">產品特色</h2>
             </div>
-            <div class="psd_point grid grid-cols-5 gap-5 justify-center mt-16">
-                <div v-for="(item, index) in feature_product" :key="index"
-                    class="bg-white p-5 rounded-xl text-center shadow-2xl">
-                    <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i>
-                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
-                    <p>{{item.text}}</p>
+            <div class="psd_point flex flex-wrap justify-center mt-16">
+                <div v-for="(item, index) in feature_product" :key="index" class="w-1/2 p-5 items-stretch">
+                    <div class="overflow-hidden flex items-center bg-white rounded-xl shadow-2xl h-full">
+                        <!-- <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i> -->
+                        <div class="w-1/2 flex-shrink-0 shadow-lg">
+                            <img :src="'./assets/images/point/'+ item.img + '.jpg'" alt="">
+                        </div>
+                        <div class="p-6">
+                            <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
+                            <p>{{item.text}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- benefits -->
-    <div class="benefits pt-24">
+    <div class="benefits">
         <div class="container mx-auto">
             <div id="benefits" class="text-center">
                 <h2 class="inline-block title">產品優勢</h2>
             </div>
-            <div class="grid grid-cols-4 gap-10 mt-16">
+            <div class="md:grid grid-cols-4 gap-10 mt-16">
                 <div class="flex items-center">
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits">
@@ -65,9 +71,9 @@ current: index
     </div>
 </div>
 <div class="about_support">
-    <div class="container mx-auto grid grid-cols-3 py-60">
+    <div class="container mx-auto md:grid grid-cols-3 py-60">
         <!-- About -->
-        <div class="about">
+        <div class="overflow-hidden rounded-xl">
             <img src="assets/images/about.jpg" alt="">
         </div>
         <div class="col-span-2 flex items-center justify-center">
@@ -96,7 +102,7 @@ current: index
                 </div>
             </div>
         </div>
-        <div class="">
+        <div class="overflow-hidden rounded-xl">
             <img src="assets/images/support.jpg" alt="">
         </div>
     </div>
