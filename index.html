@@ -24,7 +24,7 @@
 <body>
   <div class="app h-full">
     <div class="pt-16 pb-24 text-white main_products">
-      <header class="container mx-auto flex items-center justify-between">
+      <header class="container mx-auto items-center justify-between hidden md:flex">
         <div class="lg:flex items-center">
           <div class="mx-8">
             <img src="./assets/images/logo.png" alt="">
@@ -48,8 +48,8 @@
         </div>
       </header>
       <!-- products -->
-      <div class="container mx-auto grid grid-cols-5">
-        <div class="pt-10 col-span-2 mt-10 pl-20">
+      <div class="container mx-auto grid md:grid-cols-5">
+        <div class="pt-10 col-span-2 mt-10 md:pl-20">
           <h2>OTFES</h2>
           <ul class="flex products_select mb-5">
             <li class="cursor-pointer h4 py-8 px-5 font-bold" v-for="(item, index) in poducts"
@@ -70,7 +70,7 @@
             <a href="mailto:contactus@otfes.com" class="btn borderBtn">查詢最新價格方案</a>
           </div>
         </div>
-        <div class="col-span-3">
+        <div class="col-span-3 hidden md:block">
           <!-- products_carousel -->
           <div class="relative" v-for="(p, index) in poducts" :key="index"
             :class="{'h-0' : current_model !== index , 'overflow-hidden' : current_model !== index}">
@@ -100,23 +100,29 @@
             <div id="feature" class="text-center">
                 <h2 class="inline-block title">產品特色</h2>
             </div>
-            <div class="psd_point grid grid-cols-5 gap-5 justify-center mt-16">
-                <div v-for="(item, index) in feature_product" :key="index"
-                    class="bg-white p-5 rounded-xl text-center shadow-2xl">
-                    <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i>
-                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
-                    <p>{{item.text}}</p>
+            <div class="psd_point flex flex-wrap justify-center mt-16">
+                <div v-for="(item, index) in feature_product" :key="index" class="w-1/2 p-5 items-stretch">
+                    <div class="overflow-hidden flex items-center bg-white rounded-xl shadow-2xl h-full">
+                        <!-- <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i> -->
+                        <div class="w-1/2 flex-shrink-0 shadow-lg">
+                            <img :src="'./assets/images/point/'+ item.img + '.jpg'" alt="">
+                        </div>
+                        <div class="p-6">
+                            <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
+                            <p>{{item.text}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- benefits -->
-    <div class="benefits pt-24">
+    <div class="benefits">
         <div class="container mx-auto">
             <div id="benefits" class="text-center">
                 <h2 class="inline-block title">產品優勢</h2>
             </div>
-            <div class="grid grid-cols-4 gap-10 mt-16">
+            <div class="md:grid grid-cols-4 gap-10 mt-16">
                 <div class="flex items-center">
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits">
@@ -153,9 +159,9 @@
     </div>
 </div>
 <div class="about_support">
-    <div class="container mx-auto grid grid-cols-3 py-60">
+    <div class="container mx-auto md:grid grid-cols-3 py-60">
         <!-- About -->
-        <div class="about">
+        <div class="overflow-hidden rounded-xl">
             <img src="assets/images/about.jpg" alt="">
         </div>
         <div class="col-span-2 flex items-center justify-center">
@@ -184,14 +190,14 @@
                 </div>
             </div>
         </div>
-        <div class="">
+        <div class="overflow-hidden rounded-xl">
             <img src="assets/images/support.jpg" alt="">
         </div>
     </div>
 </div>
 
       <footer id="contact" class="text-white py-16">
-        <div class="container mx-auto grid grid-cols-2 mb-32">
+        <div class="container mx-auto md:grid grid-cols-2 mb-32">
           <div class="flex items-center justify-end">
             <div class="mr-16">
               <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">

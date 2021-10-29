@@ -4,6 +4,7 @@
 html,
 body {
   font-size: 16px;
+  scroll-behavior: smooth;
   font-family: "Hind Madurai", "Noto Sans TC", sans-serif;
   font-weight: 300;
   height: 100%;
@@ -137,11 +138,6 @@ h5,
   color: #d6ae84;
   border-radius: 15px;
   border: 1px solid #d6ae84; }
-
-.psd_point div:nth-child(even) {
-  -webkit-transform: translateY(80px);
-      -ms-transform: translateY(80px);
-          transform: translateY(80px); }
 
 footer {
   background-color: #080f17; }
