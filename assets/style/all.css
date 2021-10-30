@@ -14,7 +14,7 @@ body {
 
 .main_products {
   background-image: url(../images/bg.jpg);
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
 
@@ -81,28 +81,23 @@ a {
           transition-duration: 0.2s;
   background-color: #00000095; }
 
-h1,
-.h1 {
+h1 {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase; }
 
-h2,
-.h2 {
+h2 {
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase; }
 
-h3,
-.h3 {
+h3 {
   font-size: 1.75rem; }
 
-h4,
-.h4 {
+h4 {
   font-size: 1.5rem; }
 
-h5,
-.h5 {
+h5 {
   font-size: 1.25rem; }
 
 .products_select li.active {
@@ -201,5 +196,13 @@ footer {
 
 .slick-dots li.slick-active button:before {
   color: #080f17; }
+
+@media (max-width: 1024px) {
+  .main_products {
+    background-image: url(../images/bg_table.jpg); } }
+
+@media (max-width: 640px) {
+  .main_products {
+    background-image: url(../images/bg_mobile.jpg); } }
 
 /*# sourceMappingURL=all.css.map */

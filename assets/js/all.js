@@ -4,6 +4,8 @@ var app = Vue.createApp({
   data: function data() {
     return {
       langBar: true,
+      langBar_mobile: true,
+      head: true,
       poducts: [{
         type: 'MODEL 3',
         img: ['Modol3_1', 'Modol3_2', 'Modol3_3']
@@ -109,6 +111,13 @@ var app = Vue.createApp({
       });
       this.poducts[0].img = new_pc_M3;
       this.poducts[1].img = new_pc_M4;
+    },
+    winReSize: function winReSize() {
+      var win_width = $(window).width();
+
+      if (win_width < 1024) {
+        this.head = true;
+      }
     }
   },
   watch: {},
@@ -135,6 +144,7 @@ var app = Vue.createApp({
     }); // fancybox 產品詳細
 
     $('.fancybox').fancybox();
+    this.winReSize();
   }
 }); // 掛載
 
