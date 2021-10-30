@@ -8,15 +8,16 @@ current: index
 <div class="bg-white-img">
     <!-- Feature product -->
     <div class="feature bg-white-img">
-        <div class="container mx-auto py-60 lg:px-40">
+        <div class="container mx-auto py-32 2xl:py-60 2xl:px-40">
             <div id="feature" class="text-center">
                 <h2 class="inline-block title">產品特色</h2>
             </div>
-            <div class="psd_point flex flex-wrap justify-center mt-16">
-                <div v-for="(item, index) in feature_product" :key="index" class="w-1/2 p-5 items-stretch">
-                    <div class="overflow-hidden flex items-center bg-white rounded-xl shadow-2xl h-full">
+            <div class="psd_point md:flex flex-wrap justify-center mt-16">
+                <div v-for="(item, index) in feature_product" :key="index"
+                    class="w-3/4 mx-auto xl:w-1/2 p-5 items-stretch">
+                    <div class="overflow-hidden md:flex items-center bg-white rounded-xl shadow-2xl h-full">
                         <!-- <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i> -->
-                        <div class="w-1/2 flex-shrink-0 shadow-lg">
+                        <div class="md:w-1/2 flex-shrink-0 shadow-lg">
                             <img :src="'./assets/images/point/'+ item.img + '.jpg'" alt="">
                         </div>
                         <div class="p-6">
@@ -29,38 +30,46 @@ current: index
         </div>
     </div>
     <!-- benefits -->
-    <div class="benefits">
+    <div class="benefits pb-32 xl:pb-0">
         <div class="container mx-auto">
             <div id="benefits" class="text-center">
                 <h2 class="inline-block title">產品優勢</h2>
             </div>
-            <div class="md:grid grid-cols-4 gap-10 mt-16">
-                <div class="flex items-center">
+            <div class="md:grid grid-cols-4 gap-10 mt-16 px-5">
+                <div class="flex items-center col-span-2 xl:col-span-1">
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits">
                             <div v-for="(bb, index) in b.brfore"
-                                class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
-                                <div class="">
-                                    <i class="text-5xl mb-5 block text-sup" :class="bb.icon"></i>
-                                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{bb.title}}</h6>
-                                    <p>{{bb.text}}</p>
+                                class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
+                                <div class="flex xl:block">
+                                    <div class="w-1/3 xl:w-auto flex-shrink-0 text-center">
+                                        <i class="text-5xl mb-5 block text-sup" :class="bb.icon"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-lg text-dark-sup font-bold mb-2">{{bb.title}}</h6>
+                                        <p class="text-sm xl:text-base">{{bb.text}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </template>
                     </div>
                 </div>
-                <div class="col-span-2">
+                <div class="col-span-2 hidden xl:block">
                     <img src="assets/images/slamp_2.png" alt="">
                 </div>
-                <div class="flex items-center">
+                <div class="flex xl:items-center col-span-2 xl:col-span-1">
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits">
                             <div v-for="(ba, index) in b.after"
-                                class="bg-white p-10 rounded-xl text-center shadow-2xl mb-5">
-                                <div class="text-lg text-dark-sup">
-                                    <i class="text-5xl mb-5 block text-sup" :class="ba.icon"></i>
-                                    <h6 class="text-lg text-dark-sup font-bold mb-2">{{ba.title}}</h6>
-                                    <p>{{ba.text}}</p>
+                                class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
+                                <div class="flex xl:block">
+                                    <div class="w-1/3 xl:w-auto flex-shrink-0 text-center">
+                                        <i class="text-5xl mb-5 block text-sup" :class="ba.icon"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="text-lg text-dark-sup font-bold mb-2">{{ba.title}}</h6>
+                                        <p class="text-sm xl:text-base">{{ba.text}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </template>
@@ -71,14 +80,14 @@ current: index
     </div>
 </div>
 <div class="about_support">
-    <div class="container mx-auto md:grid grid-cols-3 py-60">
+    <div class="container mx-auto grid grid-cols-3 py-32 xl:py-60 px-10">
         <!-- About -->
-        <div class="overflow-hidden rounded-xl">
+        <div class="overflow-hidden 2xl:rounded-xl hidden lg:block">
             <img src="assets/images/about.jpg" alt="">
         </div>
-        <div class="col-span-2 flex items-center justify-center">
-            <div class="px-16">
-                <h2 id="store" class="mb-10 title">品牌故事</h2>
+        <div class="col-span-3 lg:col-span-2 flex items-center justify-center">
+            <div class="lg:px-16 text-center lg:text-left">
+                <h2 id="store" class="mb-10 title inline-block">品牌故事</h2>
                 <p class="r">OTFES
                     智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
                 </p>
@@ -86,13 +95,13 @@ current: index
         </div>
         <hr class="col-span-3 my-16">
         <!-- Support -->
-        <div class="col-span-2 flex items-center">
-            <div class="px-16">
-                <h2 id="support" class="mb-10 title">支援中心</h2>
-                <div class="p-10 shadow-2xl rounded-xl">
+        <div class="col-span-3 lg:col-span-2 sm:flex items-center justify-center lg:justify-start">
+            <div class="lg:px-16 text-center lg:text-left">
+                <h2 id="support" class="mb-10 title inline-block">支援中心</h2>
+                <div class="p-10 shadow-2xl rounded-xl bg-white">
                     <h3 class="font-bold mb-3">Model 4</h3>
-                    <ul class="flex items-center justify-center">
-                        <li class="mr-5">
+                    <ul class="sm:flex items-center justify-center">
+                        <li class="sm:mr-5">
                             <a href="./assets/pdf/Model 4_細部規格.pdf" download class="btn mainBtn inline-block">細部規格</a>
                         </li>
                         <li>
@@ -102,7 +111,7 @@ current: index
                 </div>
             </div>
         </div>
-        <div class="overflow-hidden rounded-xl">
+        <div class="overflow-hidden 2xl:rounded-xl hidden lg:block">
             <img src="assets/images/support.jpg" alt="">
         </div>
     </div>

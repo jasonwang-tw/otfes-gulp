@@ -31,7 +31,7 @@ body {
 }
 .main_products {
   background-image: url(../images/bg.jpg);
-  @include bg_Style(100% 100%);
+  @include bg_Style(cover);
 }
 .about_support {
   background-image: url(../images/coffee_dots.png);
@@ -92,28 +92,23 @@ a {
   background-color: #00000095;
 }
 
-h1,
-.h1 {
+h1 {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
-h2,
-.h2 {
+h2 {
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
 }
-h3,
-.h3 {
+h3 {
   font-size: 1.75rem;
 }
-h4,
-.h4 {
+h4 {
   font-size: 1.5rem;
 }
-h5,
-.h5 {
+h5 {
   font-size: 1.25rem;
 }
 
@@ -150,17 +145,6 @@ h5,
   border-radius: 15px;
   border: 1px solid map-get($color, linght-sup);
 }
-
-// .psd_point {
-//   div:nth-child(even) {
-//     transform: translateY(80px);
-//   }
-// }
-// .psd_benefits{
-//   div:nth-child(even) {
-//     transform: translateX(80px);
-//   }
-// }
 
 footer {
   background-color: map-get($color, main);
@@ -230,4 +214,15 @@ footer {
 }
 .slick-dots li.slick-active button:before {
   color: map-get($color, main);
+}
+
+@media (max-width: 1024px) {
+  .main_products {
+    background-image: url(../images/bg_table.jpg);
+  }
+}
+@media (max-width: 640px) {
+  .main_products {
+    background-image: url(../images/bg_mobile.jpg);
+  }
 }
