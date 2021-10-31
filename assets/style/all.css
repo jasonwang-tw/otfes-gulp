@@ -202,7 +202,11 @@ footer {
     background-image: url(../images/bg_table.jpg); } }
 
 @media (max-width: 640px) {
+  h2 {
+    font-size: 2rem; }
   .main_products {
-    background-image: url(../images/bg_mobile.jpg); } }
+    background-image: url(../images/bg_mobile.jpg); }
+  .bg-white-img {
+    background-image: url(../images/white_bg_mobile.jpg); } }
 
 /*# sourceMappingURL=all.css.map */

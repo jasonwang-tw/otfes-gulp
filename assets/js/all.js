@@ -6,6 +6,8 @@ var app = Vue.createApp({
       langBar: true,
       langBar_mobile: true,
       head: true,
+      scrollNum: '',
+      isTop: true,
       poducts: [{
         type: 'MODEL 3',
         img: ['Modol3_1', 'Modol3_2', 'Modol3_3']
@@ -13,6 +15,7 @@ var app = Vue.createApp({
         type: 'MODEL 4',
         img: ['Model4_1', 'Model4_2', 'Model4_3']
       }],
+      poductsSize_moblie: false,
       current_model: 0,
       nav: [{
         link: '#feature',
@@ -113,15 +116,25 @@ var app = Vue.createApp({
       this.poducts[1].img = new_pc_M4;
     },
     winReSize: function winReSize() {
-      var win_width = $(window).width();
+      var win_width = $(window).width(); // top menu 隱藏
 
       if (win_width < 1024) {
         this.head = true;
+      } // 產品圖片
+
+
+      if (win_width < 640) {
+        this.poductsSize_moblie = true;
       }
+    },
+    goTop: function goTop() {
+      document.documentElement.scrollTop = 0;
     }
   },
   watch: {},
   mounted: function mounted() {
+    var _this = this;
+
     this.products_carousel(); // products_carousel
 
     for (var index = 0; index < this.poducts.length; index++) {
@@ -131,20 +144,21 @@ var app = Vue.createApp({
         prevArrow: '.to_left' + index,
         nextArrow: '.to_right' + index
       });
-    } // partner_carousel
+    } // fancybox 產品詳細
 
-
-    $('.partner_logo').slick({
-      dots: true,
-      infinite: false,
-      slidesToShow: 8,
-      slidesToScroll: 1,
-      prevArrow: '.to_left',
-      nextArrow: '.to_right'
-    }); // fancybox 產品詳細
 
     $('.fancybox').fancybox();
     this.winReSize();
+    window.addEventListener("scroll", function () {
+      var top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+      _this.scrollNum = top;
+
+      if (top < 300) {
+        _this.isTop = true;
+      } else {
+        _this.isTop = false;
+      }
+    });
   }
 }); // 掛載
 
