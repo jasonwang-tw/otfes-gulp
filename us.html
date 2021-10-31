@@ -40,7 +40,7 @@
             </div>
             <!-- nav -->
             <ul class="lg:flex">
-                <li v-for="(items, index) in nav.tw" :key="index" class="mx-8 text-xl lg:text-base py-3"
+                <li v-for="(items, index) in nav.us" :key="index" class="mx-8 text-xl lg:text-base py-3"
                     @click="head = true">
                     <a :href="items.link">{{items.text}}</a>
                 </li>
@@ -48,7 +48,7 @@
         </div>
         <!-- desktop langBar -->
         <div class="relative cursor-pointer langBar hidden lg:block" @click="langBar = !langBar">
-            <span>Language</span><span class="mx-3">/</span><span class="text-linght-sup">繁體中文</span>
+            <span>Language</span><span class="mx-3">/</span><span class="text-linght-sup">English</span>
             <ul class="absolute z-20 w-full bg-white text-main rounded-xl overflow-hidden mt-3"
                 :class="{hidden : langBar}">
                 <li>
@@ -65,7 +65,7 @@
     <div class="p-10 text-center flex items-center justify-between lg:hidden">
         <div @click="head = false"><i class="bi bi-list text-3xl leading-none"></i></div>
         <div class="relative cursor-pointer langBar lg:hidden" @click="langBar_mobile = !langBar_mobile">
-            <span>Language</span><span class="mx-3">/</span><span class="text-linght-sup">繁體中文</span>
+            <span>Language</span><span class="mx-3">/</span><span class="text-linght-sup">English</span>
             <ul class="absolute z-10 w-full bg-white text-main rounded-xl overflow-hidden mt-3"
                 :class="{hidden : langBar_mobile}">
                 <li>
@@ -129,10 +129,10 @@
     <div class="feature bg-white-img">
         <div class="container mx-auto py-32 2xl:py-60 2xl:px-40">
             <div id="feature" class="text-center">
-                <h2 class="inline-block title">產品特色</h2>
+                <h2 class="inline-block title">PRODUCTS</h2>
             </div>
             <div class="psd_point md:flex flex-wrap justify-center mt-16">
-                <div v-for="(item, index) in feature_product.tw" :key="index"
+                <div v-for="(item, index) in feature_product.us" :key="index"
                     class="w-3/4 mx-auto xl:w-1/2 p-5 items-stretch">
                     <div class="overflow-hidden md:flex items-center bg-white rounded-xl shadow-2xl h-full">
                         <!-- <i class="text-5xl mb-5 block text-sup" :class="item.icon"></i> -->
@@ -152,12 +152,12 @@
     <div class="benefits pb-32 xl:pb-0">
         <div class="container mx-auto">
             <div id="benefits" class="text-center">
-                <h2 class="inline-block title">產品優勢</h2>
+                <h2 class="inline-block title">Benefits to coffee shops</h2>
             </div>
             <div class="md:grid grid-cols-4 gap-10 mt-16 px-5">
                 <div class="flex items-center col-span-2 xl:col-span-1">
                     <div class="psd_benefits w-full">
-                        <template v-for="(b, index) in benefits.tw">
+                        <template v-for="(b, index) in benefits.us">
                             <div v-for="(bb, index) in b.brfore"
                                 class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
                                 <div class="flex xl:block">
@@ -178,7 +178,7 @@
                 </div>
                 <div class="flex xl:items-center col-span-2 xl:col-span-1">
                     <div class="psd_benefits w-full">
-                        <template v-for="(b, index) in benefits.tw">
+                        <template v-for="(b, index) in benefits.us">
                             <div v-for="(ba, index) in b.after"
                                 class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
                                 <div class="flex xl:block">
@@ -206,8 +206,22 @@
         </div>
         <div class="col-span-3 lg:col-span-2 flex items-center justify-center">
             <div class="lg:px-16 text-center lg:text-left">
-                <h2 id="store" class="mb-10 title inline-block">品牌故事</h2>
-                <p class="">OTFES 智慧手沖咖啡機，設計採極簡工業風呈現乾淨自然的外表，咖啡機更具備IoT功能，從『一鍵沖煮』到還原咖啡大師『專業手法』，透過參數化制定咖啡沖煮流程，可滿足各種沖煮需求及維持萃取率與咖啡品質的穩定性，每個人都可以設定不同的沖煮法，為咖啡注入不同的靈魂，讓咖啡充滿無窮無盡的創造無窮無盡的創造力，以一杯咖啡追求『美的生活態度』，讓咖啡機創造無限可能。
+                <h2 id="store" class="mb-10 title inline-block">ABOUT</h2>
+                <p class="">Now Coffees shops have more time to focus on their valuable customers.
+
+                    OTFES Automatic Smart Pour Over Coffee Machine, an IoT based coffee machine, allows users to adopt
+                    pre-loaded recipes
+                    and deliver pour-over coffee at the touch of a button.
+
+                    The standout feature of this coffee maker is the Custom recipes, which ensures users to adjust
+                    elements such as water
+                    flow and temperature, and to maintain consistent quality in your good coffee. And everyone can let
+                    the imagination run
+                    riot to generate unlimited creative brew recipes.
+
+                    OTFES has developed this smart coffee machine as an artwork with the industrial style design to
+                    creative a distinctive
+                    aesthetic design and timeless appeal, and eventually, to complete your attitude for a great life.
                 </p>
             </div>
         </div>
@@ -215,15 +229,13 @@
         <!-- Support -->
         <div class="col-span-3 lg:col-span-2 sm:flex items-center justify-center lg:justify-start">
             <div class="lg:px-16 text-center lg:text-left">
-                <h2 id="support" class="mb-10 title inline-block">支援中心</h2>
+                <h2 id="support" class="mb-10 title inline-block">SUPPORT</h2>
                 <div class="p-10 shadow-2xl rounded-xl bg-white">
                     <h3 class="font-bold mb-3">Model 4</h3>
                     <ul class="sm:flex items-center justify-center">
                         <li class="sm:mr-5">
-                            <a href="./assets/pdf/Model 4_細部規格.pdf" download class="btn mainBtn inline-block">細部規格</a>
-                        </li>
-                        <li>
-                            <a href="./assets/pdf/Model 4_使用說明.pdf" download class="btn mainBtn inline-block">使用說明</a>
+                            <a href="./assets/pdf/Model 4_細部規格.pdf" download
+                                class="btn mainBtn inline-block">SPECIFICATIONS(檔案下載)</a>
                         </li>
                     </ul>
                 </div>
@@ -244,11 +256,11 @@
                 <img src="./assets/images/logo.png" alt="" class="inline-block mx-auto">
             </div>
             <div class="sm:mr-16">
-                <h3 class="mb-5 text-xl sm:text-2xl">東陞國際科技股份有限公司</h3>
+                <h3 class="mb-5 text-xl sm:text-2xl">OTFES CO., LTD.</h3>
                 <ul>
-                    <li>桃園市桃園區永順街8號</li>
-                    <li>電話: (03)301-6607</li>
-                    <li>傳真: (03)301-6627</li>
+                    <li>No. 8, Yongshun St., Taoyuan Dist., Taoyuan City 330037 , Taiwan</li>
+                    <li>TEL: +886-3-301-6607</li>
+                    <li>FAX: +886-3-301-6627</li>
                     <li><a href="mailto:contactus@otfes.com" class="text-sup underline">contactus@otfes.com</a></li>
                 </ul>
             </div>
