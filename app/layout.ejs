@@ -99,7 +99,7 @@
             :class="{'h-0' : current_model !== index , 'overflow-hidden' : current_model !== index}">
             <div :class="'products_img' + index">
               <div v-for="(pi, i) in p.img" :key="i">
-                <img :src="pi" alt="" class="block mx-auto">
+                <img :src="pi" alt="" class="block mx-auto" :class="{'h-96' : poductsSize_moblie}">
               </div>
             </div>
             <div class="flex w-full justify-between absolute top-1/2">
@@ -153,7 +153,9 @@
         </div>
         <div class="w-full text-center">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
       </footer>
-      <div class="text-white fixed bottom-10 right-10 z-10 text-2xl">
+      <div
+        class="text-white fixed bottom-10 right-10 z-10 text-2xl text-sup flex items-center justify-center w-12 h-12 bg-white shadow-xl rounded-full"
+        :class="{hidden : isTop}" @click="goTop()">
         <i class="bi bi-chevron-up"></i>
       </div>
   </div>

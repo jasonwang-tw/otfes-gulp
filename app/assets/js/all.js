@@ -4,6 +4,8 @@ const app = Vue.createApp({
       langBar: true,
       langBar_mobile: true,
       head: true,
+      scrollNum: '',
+      isTop: true,
       poducts: [
         {
           type: 'MODEL 3',
@@ -14,6 +16,7 @@ const app = Vue.createApp({
           img: ['Model4_1', 'Model4_2', 'Model4_3'],
         }
       ],
+      poductsSize_moblie: false,
       current_model: 0,
       nav: [
         {
@@ -153,9 +156,18 @@ const app = Vue.createApp({
 
       const win_width = $(window).width();
 
+      // top menu 隱藏
       if (win_width < 1024) {
         this.head = true
       }
+
+      // 產品圖片
+      if (win_width < 640) {
+        this.poductsSize_moblie = true
+      }
+    },
+    goTop() {
+      document.documentElement.scrollTop = 0;
     }
   },
   watch: {},
@@ -173,22 +185,23 @@ const app = Vue.createApp({
       });
     }
 
-
-    // partner_carousel
-    $('.partner_logo').slick({
-      dots: true,
-      infinite: false,
-      slidesToShow: 8,
-      slidesToScroll: 1,
-      prevArrow: '.to_left',
-      nextArrow: '.to_right',
-    });
-
-
     // fancybox 產品詳細
     $('.fancybox').fancybox();
 
     this.winReSize();
+
+    window.addEventListener("scroll", () => {
+      let top =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        window.pageYOffset;
+      this.scrollNum = top;
+      if (top < 300) {
+        this.isTop = true;
+      } else {
+        this.isTop = false;
+      }
+    });
   },
 });
 
