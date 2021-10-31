@@ -18,116 +18,180 @@ const app = Vue.createApp({
       ],
       poductsSize_moblie: false,
       current_model: 0,
-      nav: [
-        {
-          link: '#feature',
-          text: '產品特色'
-        },
-        {
-          link: '#benefits',
-          text: '產品優勢'
-        },
-        {
-          link: '#store',
-          text: '品牌故事'
-        },
-        {
-          link: '#support',
-          text: '支援中心'
-        },
-        {
-          link: '#contact',
-          text: '聯絡我們'
-        },
-      ],
-      feature_product: [
-        {
-          // icon: 'bi bi-droplet',
-          img: '1',
-          title: '專利螺旋注水設計',
-          text: '取得台灣、日本、美國、中國等國家專利'
-        },
-        {
-          // icon: 'bi bi-cup',
-          img: '2',
-          title: '咖啡品質穩定一致',
-          text: '固定水量、水溫、萃取時間等要素，確保每杯咖啡都符合預設的品質，杯杯盡是最佳風味。'
-        },
-        {
-          // icon: 'bi bi-moisture',
-          img: '3',
-          title: '雙鍋爐提供穩定水溫，可連續沖煮',
-          text: '優異的控溫能力，連續沖煮咖啡也不失溫，保證咖啡的預設沖煮溫度一致。'
-        },
-        {
-          // icon: 'bi bi-clipboard-data',
-          img: '4',
-          title: '自由設定沖煮參數',
-          text: '可依咖啡豆特性設定最佳沖煮手法。'
-        },
-        {
-          // icon: 'bi bi-hand-index-thumb',
-          img: '5',
-          title: '一鍵沖煮不費力',
-          text: '簡單一鍵即可進行全自動沖煮，輕鬆獲得美味咖啡。'
-        },
-      ],
-      benefits: [
-        {
-          brfore: [
-            {
-              icon: 'bi bi-person-check',
-              title: '兼顧專注手沖和細微客戶服務',
-              text: '咖啡師不再被束縛在吧檯，可增加與消費者交流時間'
-            },
-            {
-              icon: 'bi bi-currency-dollar',
-              title: '減少人事訓練成本',
-              text: '專業咖啡師人力配置及教育訓練成本降低，有效降低人事成本。'
-            },
-          ],
-        },
-        {
-          after: [
-            {
-              icon: 'bi bi-shop',
-              title: '快速展店',
-              text: '人力需求降低，營業模式及咖啡沖煮手法可快速複製，縮短開店所需時間。'
-            },
-            {
-              icon: 'bi bi-check2-circle',
-              title: '咖啡品質穩定',
-              text: '由咖啡機執行固定沖煮參數，杯杯都是相同品質。'
-            },
-          ]
-        }
-      ],
-      design_concept: [
-        {
-          icon: '',
-          text: '兼顧專注手沖和細微客戶服務',
-        },
-        {
-          icon: '',
-          text: '品質穩定精品咖啡降低對於"人"的依賴',
-        },
-        {
-          icon: '',
-          text: '咖啡師手法參數化',
-        },
-        {
-          icon: '',
-          text: 'OTFES完美重現手法',
-        },
-        {
-          icon: '',
-          text: '減少人事訓練成本',
-        },
-        {
-          icon: '',
-          text: '降低快速展店門檻',
-        }
-      ],
+      nav: {
+        tw: [
+          {
+            link: '#feature',
+            text: '產品特色'
+          },
+          {
+            link: '#benefits',
+            text: '產品優勢'
+          },
+          {
+            link: '#store',
+            text: '品牌故事'
+          },
+          {
+            link: '#support',
+            text: '支援中心'
+          },
+          {
+            link: '#contact',
+            text: '聯絡我們'
+          },
+        ],
+        us: [
+          {
+            link: '#feature',
+            text: 'PRODUCTS'
+          },
+          {
+            link: '#benefits',
+            text: 'Benefits to coffee shops'
+          },
+          {
+            link: '#store',
+            text: 'ABOUT'
+          },
+          {
+            link: '#support',
+            text: 'SUPPORT'
+          },
+          {
+            link: '#contact',
+            text: 'CONTACT'
+          },
+        ]
+      },
+      feature_product: {
+        tw: [
+          {
+            // icon: 'bi bi-droplet',
+            img: '1',
+            title: '專利螺旋注水設計',
+            text: '取得台灣、日本、美國、中國等國家專利'
+          },
+          {
+            // icon: 'bi bi-cup',
+            img: '2',
+            title: '咖啡品質穩定一致',
+            text: '固定水量、水溫、萃取時間等要素，確保每杯咖啡都符合預設的品質，杯杯盡是最佳風味。'
+          },
+          {
+            // icon: 'bi bi-moisture',
+            img: '3',
+            title: '雙鍋爐提供穩定水溫，可連續沖煮',
+            text: '優異的控溫能力，連續沖煮咖啡也不失溫，保證咖啡的預設沖煮溫度一致。'
+          },
+          {
+            // icon: 'bi bi-clipboard-data',
+            img: '4',
+            title: '自由設定沖煮參數',
+            text: '可依咖啡豆特性設定最佳沖煮手法。'
+          },
+          {
+            // icon: 'bi bi-hand-index-thumb',
+            img: '5',
+            title: '一鍵沖煮不費力',
+            text: '簡單一鍵即可進行全自動沖煮，輕鬆獲得美味咖啡。'
+          },
+        ],
+        us: [
+          {
+            // icon: 'bi bi-droplet',
+            img: '1',
+            title: 'Design patents in brewing technique system',
+            text: '取得台灣、日本、美國、中國等國家專利'
+          },
+          {
+            // icon: 'bi bi-cup',
+            img: '2',
+            title: 'Stable supplies of quality coffee',
+            text: '固定水量、水溫、萃取時間等要素，確保每杯咖啡都符合預設的品質，杯杯盡是最佳風味。'
+          },
+          {
+            // icon: 'bi bi-moisture',
+            img: '3',
+            title: 'Dual boilers, Temperature control system',
+            text: '優異的控溫能力，連續沖煮咖啡也不失溫，保證咖啡的預設沖煮溫度一致。'
+          },
+          {
+            // icon: 'bi bi-clipboard-data',
+            img: '4',
+            title: 'Custom recipes',
+            text: '可依咖啡豆特性設定最佳沖煮手法。'
+          },
+          {
+            // icon: 'bi bi-hand-index-thumb',
+            img: '5',
+            title: 'One Touch Brewing',
+            text: '簡單一鍵即可進行全自動沖煮，輕鬆獲得美味咖啡。'
+          },
+        ]
+      },
+      benefits: {
+        tw: [
+          {
+            brfore: [
+              {
+                icon: 'bi bi-person-check',
+                title: '兼顧專注手沖和細微客戶服務',
+                text: '咖啡師不再被束縛在吧檯，可增加與消費者交流時間'
+              },
+              {
+                icon: 'bi bi-currency-dollar',
+                title: '減少人事訓練成本',
+                text: '專業咖啡師人力配置及教育訓練成本降低，有效降低人事成本。'
+              },
+            ],
+          },
+          {
+            after: [
+              {
+                icon: 'bi bi-shop',
+                title: '快速展店',
+                text: '人力需求降低，營業模式及咖啡沖煮手法可快速複製，縮短開店所需時間。'
+              },
+              {
+                icon: 'bi bi-check2-circle',
+                title: '咖啡品質穩定',
+                text: '由咖啡機執行固定沖煮參數，杯杯都是相同品質。'
+              },
+            ]
+          }
+        ],
+        us: [
+          {
+            brfore: [
+              {
+                icon: 'bi bi-person-check',
+                title: 'Balancing customer service & coffee quality',
+                text: '咖啡師不再被束縛在吧檯，可增加與消費者交流時間'
+              },
+              {
+                icon: 'bi bi-currency-dollar',
+                title: 'Low manpower demand',
+                text: '專業咖啡師人力配置及教育訓練成本降低，有效降低人事成本。'
+              },
+            ],
+          },
+          {
+            after: [
+              {
+                icon: 'bi bi-shop',
+                title: 'Rapid business expansion',
+                text: '人力需求降低，營業模式及咖啡沖煮手法可快速複製，縮短開店所需時間。'
+              },
+              {
+                icon: 'bi bi-check2-circle',
+                title: 'Consistent coffee quality',
+                text: '由咖啡機執行固定沖煮參數，杯杯都是相同品質。'
+              },
+            ]
+          }
+        ]
+      }
     }
   },
   methods: {
