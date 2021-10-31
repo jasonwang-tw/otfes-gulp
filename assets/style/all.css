@@ -209,7 +209,7 @@ footer {
   .bg-white-img {
     background-image: url(../images/white_bg_mobile.jpg);
     background-attachment: inherit;
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     background-repeat: repeat; } }
 
