@@ -207,6 +207,10 @@ footer {
   .main_products {
     background-image: url(../images/bg_mobile.jpg); }
   .bg-white-img {
-    background-image: url(../images/white_bg_mobile.jpg); } }
+    background-image: url(../images/white_bg_mobile.jpg);
+    background-attachment: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat; } }
 
 /*# sourceMappingURL=all.css.map */
