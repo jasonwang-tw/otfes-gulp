@@ -7,10 +7,10 @@ $color: (
   dark-sup: #331f14
 );
 
-@mixin bg_Style($size: cover, $position: center) {
+@mixin bg_Style($size: cover, $position: center, $repeat: no-repeat) {
   background-size: $size;
   background-position: $position;
-  background-repeat: no-repeat;
+  background-repeat: $repeat;
 }
 
 // @import url("https://fonts.googleapis.com/css2?family=Saira:wght@300;400;700;900&family=Ubuntu:wght@300;500;700&display=swap");
@@ -230,5 +230,7 @@ footer {
   }
   .bg-white-img {
     background-image: url(../images/white_bg_mobile.jpg);
+    background-attachment: inherit;
+    @include bg_Style($position: top auto, $size: 100% auto, $repeat: repeat);
   }
 }
