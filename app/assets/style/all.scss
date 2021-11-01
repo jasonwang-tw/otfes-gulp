@@ -77,7 +77,8 @@ a {
     content: url(../images/line.png);
     display: block;
     bottom: -30px;
-    left: -10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .mask {
