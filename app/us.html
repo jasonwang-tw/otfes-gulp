@@ -69,17 +69,17 @@ current: index
             </ul>
             <template v-if="current_model == 0">
                 <h1 class="leading-none text-6xl xl:text-8xl">Model 3<br>
-                    <span class="mt-5 text-2xl font-normal block">智慧手沖咖啡機含櫥下機</span>
+                    <span class="mt-5 text-2xl font-normal block">Automatic Smart Pour Over Coffee Machine</span>
                 </h1>
             </template>
             <template v-else-if="current_model == 1">
                 <h1 class="leading-none text-6xl xl:text-8xl">Model 4<br>
-                    <span class="mt-5 text-2xl font-normal block">智慧手沖咖啡機含櫥下機</span>
+                    <span class="mt-5 text-2xl font-normal block">Automatic Smart Pour Over Coffee Machine</span>
                 </h1>
             </template>
             <div class="flex items-center mt-10 justify-center">
                 <!-- <a class="fancybox btn borderBtn mr-5" href="./assets/images/detail.jpg">產品詳細</a> -->
-                <a href="mailto:contactus@otfes.com" class="btn borderBtn">查詢最新價格方案</a>
+                <a href="mailto:contactus@otfes.com" class="btn borderBtn">Contact Us</a>
             </div>
         </div>
         <div class="col-span-5 lg:col-span-3 mt-20">
@@ -105,11 +105,11 @@ current: index
 </div>
 
 <div class="bg-white-img">
-    <!-- Feature product -->
-    <div class="feature bg-white-img">
+    <!-- benefits -->
+    <div class="benefits bg-white-img">
         <div class="container mx-auto py-32 2xl:py-60 2xl:px-40">
             <div id="feature" class="text-center">
-                <h2 class="inline-block title">PRODUCTS</h2>
+                <h2 class="inline-block title">FEATURES</h2>
             </div>
             <div class="psd_point md:flex flex-wrap justify-center mt-16">
                 <div v-for="(item, index) in feature_product.us" :key="index"
@@ -121,25 +121,25 @@ current: index
                         </div>
                         <div class="p-6">
                             <h6 class="text-lg text-dark-sup font-bold mb-2">{{item.title}}</h6>
-                            <p>{{item.text}}</p>
+                            <p v-html="item.text"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- benefits -->
-    <div class="benefits pb-32 xl:pb-0">
+    <!-- Feature product -->
+    <div class="feature pb-32 xl:pb-0">
         <div class="container mx-auto">
             <div id="benefits" class="text-center">
-                <h2 class="inline-block title">Benefits to coffee shops</h2>
+                <h2 class="inline-block title">BENEFITS TO COFFEE SHOPS</h2>
             </div>
             <div class="md:grid grid-cols-4 gap-10 mt-16 px-5">
                 <div class="flex items-center col-span-2 xl:col-span-1">
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits.us">
                             <div v-for="(bb, index) in b.brfore"
-                                class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
+                                class="bg-white md:h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
                                 <div class="flex xl:block">
                                     <div class="w-1/3 xl:w-auto flex-shrink-0 text-center">
                                         <i class="text-5xl mb-5 block text-sup" :class="bb.icon"></i>
@@ -160,7 +160,7 @@ current: index
                     <div class="psd_benefits w-full">
                         <template v-for="(b, index) in benefits.us">
                             <div v-for="(ba, index) in b.after"
-                                class="bg-white h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
+                                class="bg-white md:h-44 xl:h-auto p-10 rounded-xl xl:text-center shadow-2xl mb-5">
                                 <div class="flex xl:block">
                                     <div class="w-1/3 xl:w-auto flex-shrink-0 text-center">
                                         <i class="text-5xl mb-5 block text-sup" :class="ba.icon"></i>
@@ -262,7 +262,7 @@ current: index
             </ul>
         </div>
     </div>
-    <div class="w-full text-center">Copyright © 2021 OTFES Inc. 保留一切權利。</div>
+    <div class="w-full text-center">Copyright © 2021 OTFES Inc. All rights reserved.</div>
 </footer>
 
 <!-- go_top -->
