@@ -21,12 +21,12 @@ const app = Vue.createApp({
       nav: {
         tw: [
           {
-            link: '#feature',
-            text: '產品特色'
-          },
-          {
             link: '#benefits',
             text: '產品優勢'
+          },
+          {
+            link: '#feature',
+            text: '產品特色'
           },
           {
             link: '#store',
