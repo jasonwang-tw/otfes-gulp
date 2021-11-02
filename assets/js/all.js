@@ -19,11 +19,11 @@ var app = Vue.createApp({
       current_model: 0,
       nav: {
         tw: [{
-          link: '#benefits',
-          text: '產品優勢'
-        }, {
           link: '#feature',
           text: '產品特色'
+        }, {
+          link: '#benefits',
+          text: '產品優勢'
         }, {
           link: '#store',
           text: '品牌故事'
@@ -35,11 +35,11 @@ var app = Vue.createApp({
           text: '聯絡我們'
         }],
         us: [{
-          link: '#benefits',
-          text: 'BENEFITS TO COFFEE SHOPS'
-        }, {
           link: '#feature',
           text: 'FEATURES'
+        }, {
+          link: '#benefits',
+          text: 'BENEFITS TO COFFEE SHOPS'
         }, {
           link: '#store',
           text: 'ABOUT'
@@ -53,10 +53,10 @@ var app = Vue.createApp({
       },
       feature_product: {
         tw: [{
-          // icon: 'bi bi-droplet',
-          img: '1',
-          title: '專利螺旋注水設計',
-          text: '取得台灣、日本、美國、中國等國家專利。'
+          // icon: 'bi bi-hand-index-thumb',
+          img: '5',
+          title: '一鍵沖煮不費力',
+          text: '簡單一鍵即可進行全自動沖煮，輕鬆獲得美味咖啡。'
         }, {
           // icon: 'bi bi-cup',
           img: '2',
@@ -73,16 +73,16 @@ var app = Vue.createApp({
           title: '自由設定沖煮參數',
           text: '可依咖啡豆特性設定最佳沖煮手法。'
         }, {
-          // icon: 'bi bi-hand-index-thumb',
-          img: '5',
-          title: '一鍵沖煮不費力',
-          text: '簡單一鍵即可進行全自動沖煮，輕鬆獲得美味咖啡。'
-        }],
-        us: [{
           // icon: 'bi bi-droplet',
           img: '1',
-          title: 'Design patents in brewing technique system',
-          text: 'International patents.'
+          title: '專利螺旋注水設計',
+          text: '取得台灣、日本、美國、中國等國家專利。'
+        }],
+        us: [{
+          // icon: 'bi bi-hand-index-thumb',
+          img: '5',
+          title: 'One Touch Brewing',
+          text: 'Brew with a touch of the button from the pre-loaded recipes.'
         }, {
           // icon: 'bi bi-cup',
           img: '2',
@@ -92,17 +92,17 @@ var app = Vue.createApp({
           // icon: 'bi bi-moisture',
           img: '3',
           title: 'Dual boilers, Temperature control system',
-          text: 'Control the water temperature through the <span class="text-red-500">dual boiler</span> system.'
+          text: 'Control the water temperature through the dual boiler system.'
         }, {
           // icon: 'bi bi-clipboard-data',
           img: '4',
           title: 'Custom recipes',
           text: 'Preset your brew recipes including pour numbers、 water amount、water  temperature and pour patterns.'
         }, {
-          // icon: 'bi bi-hand-index-thumb',
-          img: '5',
-          title: 'One Touch Brewing',
-          text: 'Brew with a touch of the button from the pre-loaded recipes.'
+          // icon: 'bi bi-droplet',
+          img: '1',
+          title: 'Design patents in brewing technique system',
+          text: 'International patents.'
         }]
       },
       benefits: {
